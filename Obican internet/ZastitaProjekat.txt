@@ -1,0 +1,45 @@
+https://www.redpoints.com/blog/what-is-game-cracking/
+
+https://www.scienceabc.com/innovation/how-are-computer-games-cracked.html
+
+https://en.wikipedia.org/wiki/Video_game_piracy
+
+https://www.dosdays.co.uk/topics/game_cracks.php
+
+https://www.vintageisthenewold.com/game-pedia/is-denuvo-drm-safe
+
+https://www.easy.ac/en-us/
+
+https://www.quora.com/Why-can-no-one-crack-the-new-Denuvo-protected-games
+
+https://www.reddit.com/r/REGames/comments/51g1mh/deleted_by_user/
+
+
+
+
+""HOW DO PEOPLE CRACK SOFTWARE""
+
+By thinking like a
+
+user
+architect
+mechanic.
+Software cracking - Wikipedia refers to
+
+“ modification of software to remove or disable features which are considered undesirable by the person cracking the software, especially copy protectionfeatures (including protection against the manipulation of software, serial number, hardware key, date checks and disc check) or software annoyances like nag screens and adware.”
+
+First step: think like a user.
+
+This entails understanding the program itself, in its unmodified form. For example, this could be a piece of software with a 30-day full-featured trial, and once the trial period is over the software application no longer functions. Before someone develops a crack, they often need to understand what undesirable features are present or what features are left to be desired, Adding features is usually called “modding”, which is significantly harder than “cracking” (disabling certain features).
+
+Hypothetically, if a cracker is trying to circumvent a license for a game, she might have to buy the game for herself and beat the game from start to finish to try and understand what a “full-featured” system looks like.
+
+Second step: think like an architect.
+
+Specifically, the cracker puts herself in the mindset of the application engineer in order to try and guess how the undesirable feature was implemented. For example, a naive implementation of a 30-day trial software might add a key-value to the Windows registry (if running on Windows OS), and at startup, check if the current timestamp is older than the registry value by less than 30 days.
+
+This forms the basis of how the cracker will approach the problem. Some simple tests the cracker might perform is to see if simple hacks like wiping the registry value or setting the clock back in time can bypass these features.
+
+Third step: think like a mechanic.
+
+Reverse-engineering a piece of software is very much like taking a car apart and putting it back together with a blindfold on - you’re not even exactly sure what car model you’re disassembling, but you roughly know how a car works and can feel with your hands what pieces connect to each other, what parts are critical for the car to function, etc.
