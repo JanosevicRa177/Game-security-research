@@ -8,6 +8,8 @@ Posmatrani sistem predstavlja online multiplayer video igru za trke automobila. 
 
 Sistem je implementiran preko monolitne arhitekture. Na nivou aplikacije, postoji jedna deljena baza podataka. Kako bi bilo omogućeno skaliranje aplikacije, ispred Game Manager-a je postavljen Load Balancer, koji služi za rutiranje saobraćaja do neke od instanci Game Manager-a. Game manager vrši orkestraciju podataka o igračima i igrama, te preko Message Brokera komunicira sa Kubernetes Clusterom. Kubernetes Cluster kreira instance Game Node-ova po potrebi.[1]
 
+![Slika dekompozicije modula](https://github.com/JanosevicRa177/Game-security-research/blob/main/Dekompozicija%20modula/Dekompozicija%20modula.png)
+
 ## Autentifikacija
 
 Autentifikacija sistema se obavlja preko eksternog Firebase sistema za autentifikaciju. Firebase kreira token za svaku korisničku sesiju, a zatim se token koristi za autorizaciju zahteva.[4]
