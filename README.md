@@ -1,6 +1,6 @@
 
 # Security analiza video igara
-Tema istraživanja način izrade video igrara odnosno njihova arhitektura. Koja će biti prikazana kroz dekompoziciju modula. Zatim daljim istraživanjem istražiće se najčešći napadi na video igre kroz anomalije unosa korisnika tokom partije video igre. Takodje istražiće se napadi na sam sistem koji napadaču donose razne mogućnosti, u vidu razaranja partije igre, sticanja prednosti u odnosu na druge igrače ili dobavljanja raznih resursa u igri bez ulaganja napora.
+Tema istraživanja jeste način izrade video igara odnosno njihova arhitektura, koja će biti prikazana kroz dekompoziciju modula. Zatim daljim istraživanjem istražiće se najčešći napadi na video igre kroz anomalije unosa korisnika tokom partije video igre. Takodje istražiće se napadi na sam sistem koji napadaču donose razne mogućnosti, u vidu razaranja partije igre, sticanja prednosti u odnosu na druge igrače ili dobavljanja raznih resursa u igri bez ulaganja napora.
 
 Spomenuće se i razvoj DRM[1] sistema i njihova primena u video igrama. Kao i siva zona probijanja DRM alata u vidu unapredjenja video igara kroz modovanje video igara. Isto tako istraživanje će pokriti i uticaj DRM alata na performanse software-a koji ih koristi i rizik privatnosti kao i sigurnosni rizik koji ti alati donose.
 
