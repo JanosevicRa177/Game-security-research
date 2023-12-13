@@ -5,7 +5,7 @@ Tema istraživanja jeste način izrade video igara odnosno njihova arhitektura, 
 Spomenuće se i razvoj DRM[1] sistema i njihova primena u video igrama. Kao i siva zona probijanja DRM alata u vidu unapredjenja video igara kroz modovanje video igara. Isto tako istraživanje će pokriti i uticaj DRM alata na performanse software-a koji ih koristi i rizik privatnosti kao i sigurnosni rizik koji ti alati donose.
 
 ## Sadržaj
-[Dekompozicija modula](https://github.com/JanosevicRa177/Game-security-research/blob/main/Dekompozicija%20modula/Dekompozicija%20modula.md) : Opis i prikaz dekompozicije arhitekture online video igre za trke automobila.
+[Dekompozicija modula](https://github.com/JanosevicRa177/Game-security-research/tree/main/Dekompozicija%20modula) : Opis i prikaz dekompozicije arhitekture online video igre za trke automobila.
 
 ## Članovi tima
 Dušan Janošević E2 6/2023
