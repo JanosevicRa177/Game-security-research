@@ -11,7 +11,7 @@ Pristupi arhitekturi su peer-to-peer arhitektura i client-server arhitektura, sv
   Ne postoji server, svaki klijent komunicira sa svakim klijentom i šalje pakete informacija. Klijent ima ulogu i klijenta i servera i samim tim se otežava sinhronizacija podataka izmedju klijenata. Može biti poprilično nezgodan pristup ukoliko ima puno igrača jer je ovaj model teško skalabilan, ali ima svoju primenu kod multiplayer igara sa manje igrača, jer nema jedan point of failure [4]. Isto tako ova arhitektura se teško štiti od napada malicioznih korisnika [6] jer ne postoji telo koje će validirati input-e korisnika.
 
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture/Slike/Peer-to-peer%20arhitektura.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Peer-to-peer%20arhitektura.png" />
 </p>
 
 <p align="center">
@@ -23,7 +23,7 @@ Pristupi arhitekturi su peer-to-peer arhitektura i client-server arhitektura, sv
   Podrazumeva da postoje više klijenata i jedan server, češći pristup pravljenja multiplayer igara sa velikom količinom korisnika. Server čuva pravi state igre [5] dok klijenti čuvaju kopije i ažuriraju ih po potrebi. Problem je što igra ima jedan point of failure odnosno ako server padne, svim igračima će igra biti prekinuta. Sa ovakvim pristupom dosta napada malicioznih korisnika se automatski eliminiše jer je glavni state igre na samom serveru. A korisnici mogu samo svoje stanje da ažuriraju slanjem paketa informacija koji sadrže samo njihove izmene, a neretko te izmene su u vidu signala sa pomeraj ili pucanje iz puške, time se smanjuje količina informacija koje korisnik šalje na server i smanjuje se šansa da nekom svojim input-om naruši autoritet igre.
 
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture/Slike/Client-server%20arhitektura.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Client-server%20arhitektura.png" />
 </p>
 <p align="center">
   Client-server arhitektura
@@ -37,7 +37,7 @@ U daljem tekstu više je opisana client-server arhitektura jer je danas zastuplj
   Ranije dok još nisu bile zastupljene online video igre, state igre se čuvao na samom računaru odnosno konzoli, i ažurirao se na odredjeni vremenski period. Ranije je to bilo 30 puta u sekundi a kasnije sa razvojem jačih konzola i računara ažuriranje state-a igre je skočilo na preko 100 puta u sekundi. Serveri sobzirom da moraju da obradjuju mnogo klijenata ne mogu da ažuriraju svoje stanje toliko puta u sekundi, gde je do skoro bio primer da u igri Counter Strike: Global offensive, igrači su ažurirali stanje igre preko 100 puta u sekundi dok su serveri ažurirali samo 60 puta u sekundi. Pa je dolazilo do neslaganja onoga što korisnik vidi i što se dešava na serveru. Naziv za ažuriranje state-a video igre na serveru se još poznato zove tick rate [7]. Poznato je da igre koje imaju veliku količinu igrača moraju raditi na nižem tick rate-u da ne bi došlo do opterećenja sistema, ali isto tako competitive igre [8] moraju raditi na većem tick rate-u zvog brzog odziva korisnika. Zato što klijent mnogo brže ažurira state igre, pri dobavljanju state-a igre sa servera izmedju iteracija se radi interpolacija state-a igre zbog fluidnosti igre.
 
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture/Slike/Interpolacija%20state-a%20sa%20servera.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Interpolacija%20state-a%20sa%20servera.png" />
 </p>
 <p align="center">
   Interpolacija state-a sa servera
@@ -48,7 +48,7 @@ U daljem tekstu više je opisana client-server arhitektura jer je danas zastuplj
   Sa razvitkom online igara pojavio se problem latency-a, što predstavlja vreme za koje će korisnički input doći do servera, server obraditi korisnički input i vratiti mu povratnu informaciju u visu novog state-a igre. Ovaj proces se naziva Round trip time odnosno skraćeno RTT [9]. Da bi se poboljšao odziv, server i klijent neretko dele isti ili sličan kod za ažuriranje stanja determinističkih inputa korisnika.
 
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture/Slike/Rount%20trip%20time%20primer.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Rount%20trip%20time%20primer.png" />
 </p>
 <p align="center">
   Rount trip time primer
@@ -65,7 +65,7 @@ U daljem tekstu više je opisana client-server arhitektura jer je danas zastuplj
   Sistem po kome se uz najnoviji input, šalje i nekoliko prethodnih u slučaju da neki paket nije stigao, Na osnovu toga server će znati koje pakete input-a treba da primeni na state igre. Problem nastaje što se redudantno šalju input-i koji su verovatno već primenjeni.
 
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture/Slike/Slanje%20više%20poslednjih%20paketa%20inputpng.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Slanje%20više%20poslednjih%20paketa%20inputpng.png" />
 </p>
 <p align="center">
   Slanje više poslednjih paketa input-a
@@ -76,7 +76,7 @@ U daljem tekstu više je opisana client-server arhitektura jer je danas zastuplj
   Klijent kešira par paketa input-a kod sebe i šalje najnoviji paket input-a zajedno sa informacijom da nije dobio odziv za odredjene pakete. Server mu zatim odgovara ukoliko neki paket fali ili mu javlja da je paket uspešno obradjen, nakon toga klijent šalje pakete koji fale na serverskoj strani. Mana je što se ne poštuje vreme primene input-a a neki inputi se moraju obraditi sekvencijalno.
 
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture/Slike/Keširanje%20par%20paketa%20input.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Keširanje%20par%20paketa%20input.png" />
 </p>
 <p align="center">
   Keširanje par paketa input-a
