@@ -81,6 +81,10 @@ U daljem tekstu više je opisana client-server arhitektura jer je danas zastuplj
 <p align="center">
   Keširanje par paketa input-a
 </p>
+
+## Značenje izbora arhitekture i načini odbrane od napada preko UDP konekcije
+
+  Kao što je već spomenuto Client-server arhitektura je sigurnija od Peer-to-peer arhitekture jer postoji validaciono telo u vidu servera koje će svaki input korisnika validirati. Kada postoji UDP komunikacija, da bi korisniku, u ovom slučaju napadaču smanjili polje napada omogućavamo slanje samo neophodnih podataka u vidu signala, idi gore, idi levo, pucaj i slično, a ako je baš neophodna detaljnija poruka onda je validiramo pri dolasku do servera, takodje treba validirati i signale za odredjene akcije ukoliko pristigne više signala koji nisu medjusobno kompatibilni. Takodje moguća je potreba da se ubaci dodatna validacija sa klijentske strane da ne bi došlo do toga da tokom igre jedan od korisnika dospe do drugog i krene da mu šalje podatke umesto servera odnosno da sprečimo druge korisnike da koriste spoofing i time postignu denial of service ali ne sa serverske strane nego da onesposobe klijenta da prikuplja informacije sa servera. Moguć način odbrane od takvog napada jeste da se enkriptuje UDP razmena poruka i da se adrese kod nas čuvaju enkriptovane i time zaštite korisnika od napada.
   
 
 ## Rečnik pojmova
