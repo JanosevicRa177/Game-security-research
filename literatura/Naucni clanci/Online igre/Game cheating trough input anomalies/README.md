@@ -12,9 +12,27 @@
 
   Zbog ovoga je najveći fokus na detekciji na samom serveru, koja se i obradjuje u članku. Server za svaki input korisnika beleži logove. Ti logovi imaju razne kategorije u vidu kom tipu interakcije input pripada. Da li korisnik odnosno mogući bot ubija čudovišta, priča sa drugim igračima, trade-uje [6] se, skuplja resurse, završava misije i slično.
 
-  Dati članak se fokusirao na analizu logova korisnika koji su bili u party play-u [7] time su limitirali količinu logova za analizu na samo taj aspekat zajedničke igre, Nakon analize utvrdili su da vreme koje korisnici provedu u party play-u dirketno ima korelaciju sa time koje su šanse da je korisnik bot. Ukoliko su korisnici proveli 12 ili 24 sata u party play-u šanse da je u pitanju bot su daleko veće. Isto tako analizom vrste logova primetilo se da botovi ostavljaju daleko veću količinu logova za levelovanje [8] likova, prikupljanje resursa i trade-ovanje, dok su logovi običnih korisnika ravnomerno rasporedjeni. Time se zaključilo da je glavni cilj botova da leveluju naloge i prikupljaju In-game novac [9]. Isto tako primećuje se da po većoj dužini trajanja party play-a broj igrača se svodi na dva u većoj količini. Razlog toga je što botovi uglavnom idu u paru, jedan stražari dok drugi prikuplja resurse.
+  Dati članak se fokusirao na analizu logova korisnika koji su bili u party play-u [7] time su limitirali količinu logova za analizu na samo taj aspekat zajedničke igre, Nakon analize utvrdili su da vreme koje korisnici provedu u party play-u dirketno ima korelaciju sa time koje su šanse da je korisnik bot. Ukoliko su korisnici proveli 12 ili 24 sata u party play-u šanse da je u pitanju bot su daleko veće. Isto tako analizom vrste logova primetilo se da botovi ostavljaju daleko veću količinu logova za levelovanje [8] likova, prikupljanje resursa i trade-ovanje, dok su logovi običnih korisnika ravnomerno rasporedjeni. Time se zaključilo da je glavni cilj botova da leveluju naloge i prikupljaju In-game novac [9]. 
+  
+<p align="center">
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Online%20game%20bot%20detection%20based%20on%20party-play%20log%20analysis/Broj%20igrača%20po%20vremenu%20u%20party%20play-u.png" />
+</p>
+
+<p align="center">
+  Broj igrača po vremenu u party play-u
+</p>
+  
+  Isto tako primećuje se da po većoj dužini trajanja party play-a broj igrača se svodi na dva u većoj količini. Razlog toga je što botovi uglavnom idu u paru, jedan stražari dok drugi prikuplja resurse.
 
   Ovakav sistem za detekciju botova daje preciznost od 96% tačnosti.
+
+<p align="center">
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Online%20game%20bot%20detection%20based%20on%20party-play%20log%20analysis/Raspodela%20logova%20po%20vremenu%20u%20party%20play-u.png" />
+</p>
+
+<p align="center">
+  Raspodela logova po vremenu u party play-u
+</p>
 
 ### Efficient Deep Learning Bot Detection in Games Using Time Windows and Long Short-Term Memory (LSTM)
 
