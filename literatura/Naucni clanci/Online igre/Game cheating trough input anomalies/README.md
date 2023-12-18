@@ -42,8 +42,23 @@ Problem koji nastaje u ovakvnom načinu detekcije je što se logovi moraju već 
 
   Princip koji su koristili je LSTM(Long Short-Term Memory) neuronske mreže. Za razliku od Rekurzivnih neuronskih mreža LSTM mreže traže manje resursa i brže su, samim tim i pogodnije za obradu velike količine igrača. Neuronska mreža ovakvog tipa pokazala se pogodna za detekciju botova, jer najbolje rezultate pokazuje za kratko vreme analize, testirano je na vremenskim intervalima od 15, 30,45 i 60 sekundi, a najbolje se pokazala za 15 i 30 sekundi pa je izbor pao na detekciju od 15 sekundi jer je detekcija na 30 sekundi neznatno bolja 15 sekundi, ali je potrebno duplo kraće vreme za detekciju. 
 
+<p align="center">
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Efficient%20Deep%20Learning%20Bot%20Detection%20in%20Games(LSTM)/Primer%20obučavanja%20po%20vremenskim%20intervalima.png" />
+</p>
+
+<p align="center">
+  Primer obučavanja po vremenskim intervalima
+</p>
+
   Neuronska mreža ovog tipa imala je četiri ulaza koji su skalirani na vrednosti izmedju 0 i 1, Ulazi su bili broj frame-a[^11], drugi parametar jeste broj selektovanih trupa, a treći i četvrti parametar su X i Z koordinate miša. Izlaz je bio jedan i predstavljao je detekciju da li je korisnik bot. Izmedju su se nalazila dva sloja LTSM neuronske mreže sa 64 čvora po svakom sloju.
-  
+
+  <p align="center">
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Efficient%20Deep%20Learning%20Bot%20Detection%20in%20Games(LSTM)/Primer%20neuronske%20mreže%20iz%20članka.png" />
+</p>
+
+<p align="center">
+  Primer neuronske mreže iz članka
+</p>
   
   Da bi se sistem ubrzao još više neuronska mreža je obradjivala igrače po principu da pronadje potencijalne botove i pošalje ih na dalju analizu da bi bila u stanju da pokrije što veću količinu igrača. Ovakav sistem pokazao je tačnost od preko 98%. Mane ovakvog sistema jeste što da bi se tačnost povećala potrebna je veća količina podataka za obučavanje neuronske mreže, i činjenica da pri obučavanju neuronske mreže koripćeni su podaci o partijama koje su igrali samo profesionalni igrači jer je takvim podacima mnogo lakše naći pristup. Isto tako botovi koji su bili analizirani bili su botovi koji su napravljeni da se takmiče protiv drugih botova a ne botovi koji trebaju da simuliraju običnog korisnika. Rezultati bi pri detekciji botova koji simuliraju ljude verovatno bili lošiji.
 
