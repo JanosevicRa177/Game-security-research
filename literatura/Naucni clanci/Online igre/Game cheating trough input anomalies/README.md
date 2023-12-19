@@ -66,6 +66,31 @@ Problem koji nastaje u ovakvnom načinu detekcije je što se logovi moraju već 
 
 ## Detekcija cheat-ovanja[^2] u video igrama
 
+### Deep learning and multivariate time series for cheat detection in video games
+
+  Članak koji opisuje detekciju cheat-ovanja u video igrama kroz analizu inputa korisnika i puštanje podataka kroz neuronsku mrežu. Sistem liči na princip Detekcije botova neuronskom mrežom iz prethodnog članka ali je razlika što ne koristi LSTM neuronsku mrežu već Konvolucionu neuronsku mrežu sa drugačijim parametrima i strukturom. Analiza cheat-ovanja je bila vršena u igri Counter Strike: Global Offensive FPS igre. 
+  
+  Neuronska mreža je imala 3 konvoluciona medjusloja i 10 ulaza u vidu specifičnih input-a korisnika kao što su W, A, S, D tasteri, levi i desni klik miša kao i pozicija miša po X i Y koordinati i razlike u poziciji miša po X i Y koordinati. Na izlazu se dobija informacija da li korisnik vara u igri ili ne.
+
+<p align="center">
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Deep%20learning%20and%20multivariate%20time%20series%20for%20cheat%20detection%20in%20video%20games/Primer%20neuronske%20mreže%20koja%20je%20korišćena.png" />
+</p>
+
+<p align="center">
+  Primer neuronske mreže koja je korišćena
+</p>
+
+Analizirani su input-i 118 korisnika, od koji su 8 aktivno koristili Software za cheat-ovanje. Relativno mala količina korisnika ali dovoljna količina Materijala koji su obradjivani jer je uzeto oko 500 sati materijala.
+
+<p align="center">
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Deep%20learning%20and%20multivariate%20time%20series%20for%20cheat%20detection%20in%20video%20games/Statistika%20analiziranih%20podataka.png" />
+</p>
+
+<p align="center">
+  Statistika analiziranih podataka
+</p>
+
+  Još jedan sistem za detekciju cheat-ovanja u video igrama koji je implementiran u igri Counter Strike je pod nazivom Overwatch, sistem koji igračima koji su se pokazali umešni u igri i koji pošteno igraju igru omogućava da pregledaju snimak igrača koji su bili prijavljeni za cheat-ovanje i da osude osumnjičenog da li je cheat-ovao ili ne. Ukoliko pogode, ubuduće će se njihov glas više vrednovati pri osudi. Problem je što traži aktivan prolazak korisnika kroz snimke da bi osudio osumnjičenog.
 
 
 ## Rečnik pojmova
@@ -90,4 +115,6 @@ Problem koji nastaje u ovakvnom načinu detekcije je što se logovi moraju već 
 
 [^10]: MMORPG - Massible multiplayer online role playing game, igra koju igra masivan broj igrača i koji često mogu medjusobno interagovati u velikim grupama
 
-[^11] Frame - sve akcije koje su primenjene u jednoj iteraciji prikaza na ekranu
+[^11]: Frame - sve akcije koje su primenjene u jednoj iteraciji prikaza na ekranu
+
+[^12]: FPS Igra - Igra iz prvog lica u kojoj igrač puca iz puške na druge igrače i obrnuto
