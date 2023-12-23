@@ -90,7 +90,7 @@ U daljem tekstu više je opisana client-server arhitektura jer je danas zastuplj
 
 [1] [Analiza arhitekture sistema i protokola](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Real-time%20Multiplayer%20Software%20Architecture.pdf)
 
-[2] [Sigurnost i kradja podataka iz protokola](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Real-time%20Multiplayer%20Software%20Architecture.pdf)
+[2] [Sigurnost i kradja podataka iz protokola](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Session%20Hijacking.pdf)
 
 
 ## Rečnik pojmova
