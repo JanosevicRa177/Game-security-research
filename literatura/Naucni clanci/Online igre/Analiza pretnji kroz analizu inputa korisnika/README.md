@@ -38,7 +38,7 @@
 
 Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napade koji su vezani za datu pretnju i opisati na koji način se sistem može zaštititi od datih pretnji.
 
-### Kradja korisničkih podataka u igri
+## Kradja korisničkih podataka u igri
 
   Poznat napad "Man in the middle" koji predstavlja prisluškivanje poruka koje pristižu na server od korisnika sistema, moguća je i izmena datih podataka ali nije tema pretnje ovakvog sistema, zato što napadač nema neku dobit u izmeni podataka, ono što mu je bitnije jeste da dopre do podataka o korisniku koji mu omogućavaju razne druge napade. Svakim input-om korisnika, šalju se podaci od ID-u korisnika kao i odakle je podataka došao (IP adresa korisnika). Ukoliko napadač prisluškuje mrežu može doći do ovih podataka i zloupotrebiti ih.
 
@@ -52,7 +52,7 @@ Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napad
 
   Enkripcija sa serverske strane če imati svoj ključ za enkripciju dok će svaki od korisnika imati svoj ključ za razmenu podataka izmedju servera i klijenta. Ukoliko je igra koja funkcioniše po principu partija koje traju od 10 minuta do sat vremena, za svaku sesiju partije će se korisniku generisati ključ za enkripciju, dok ukoliko je igra koja ne funkcioniše po principu partija već dugih sesija igranja generisaće se novi ključ posle odredjenog vremena. Time je korisnik u potpunosti zaštićen od kradje svojih podataka.
 
-### Nekontrolisano slanje input-a
+## Nekontrolisano slanje input-a
 
   Napad koji je poznat kao **Denial of Service** napad koji smo do sad već spomenuli, u ovom slučaju napad je na sam server. Gde je cilj da se server preplavi podacima i time smanji odziv servera ili u potpunosti prekine konekcija na server. Način na koji se ovaj napad realizuje jeste da se šalje veći deo podataka nego što server može da primi.
 
@@ -64,7 +64,7 @@ Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napad
   
   Što se više podataka šalje na server, to je potrebno više podataka validirati. Da bi korisniku smanjili mogućnosti da naruši state igre uglavnom se šalju samo signali da korisnik nešto želi da odradi, ili eventualno jako mali skup podataka koji je lako validirati[1].
 
-### Napredne anomalije input-a
+## Napredne anomalije input-a
 
   Pod naprednim anomalijama inputa svrstavaju se paketi informacija koji se šalju na server koji su sintaksno i po tehničnoj semantici ispravni, ali kada ljudsko biće pogleda date podatke primećuje da date inpute ne može proizvesti čovek. Ovo su najčešći napadi na video igre, koje napadaču mogu doneti neku vrednost jako brzo, ili u vidu resursa ili u vidu poena veštine. Većina ovakvih napada je lako realizovati zato što postoje grupe ljudi koji prodaju software koji omogućava ovakve napade.
 
