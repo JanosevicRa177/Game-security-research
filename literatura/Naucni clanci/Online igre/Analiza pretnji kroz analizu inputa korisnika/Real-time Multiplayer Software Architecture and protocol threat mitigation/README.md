@@ -8,7 +8,7 @@ Pristupi arhitekturi su peer-to-peer arhitektura i client-server arhitektura, sv
 
 ### Peer-to-peer arhitektura
 
-  Ne postoji server, svaki klijent komunicira sa svakim klijentom i šalje pakete informacija. Klijent ima ulogu i klijenta i servera i samim tim se otežava sinhronizacija podataka izmedju klijenata. Može biti poprilično nezgodan pristup ukoliko ima puno igrača jer je ovaj model teško skalabilan, ali ima svoju primenu kod multiplayer igara sa manje igrača, jer nema jedan point of failure [^4]. Isto tako ova arhitektura se teško štiti od napada malicioznih korisnika [^6] jer ne postoji telo koje će validirati input-e korisnika.
+  Ne postoji server, svaki klijent komunicira sa svakim klijentom i šalje pakete informacija. Klijent ima ulogu i klijenta i servera i samim tim se otežava sinhronizacija podataka izmedju klijenata.[1] Može biti poprilično nezgodan pristup ukoliko ima puno igrača jer je ovaj model teško skalabilan, ali ima svoju primenu kod multiplayer igara sa manje igrača, jer nema jedan point of failure [^4]. Isto tako ova arhitektura se teško štiti od napada malicioznih korisnika [^6] jer ne postoji telo koje će validirati input-e korisnika.
 
 <p align="center">
   <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Peer-to-peer%20arhitektura.png" />
@@ -20,7 +20,7 @@ Pristupi arhitekturi su peer-to-peer arhitektura i client-server arhitektura, sv
 
 ### Client-server arhitektura
 
-  Podrazumeva da postoje više klijenata i jedan server, češći pristup pravljenja multiplayer igara sa velikom količinom korisnika. Server čuva pravi state igre [^5] dok klijenti čuvaju kopije i ažuriraju ih po potrebi. Problem je što igra ima jedan point of failure odnosno ako server padne, svim igračima će igra biti prekinuta. Sa ovakvim pristupom dosta napada malicioznih korisnika se automatski eliminiše jer je glavni state igre na samom serveru. A korisnici mogu samo svoje stanje da ažuriraju slanjem paketa informacija koji sadrže samo njihove izmene, a neretko te izmene su u vidu signala sa pomeraj ili pucanje iz puške, time se smanjuje količina informacija koje korisnik šalje na server i smanjuje se šansa da nekom svojim input-om naruši autoritet igre.
+  Podrazumeva da postoje više klijenata i jedan server, češći pristup pravljenja multiplayer igara sa velikom količinom korisnika. Server čuva pravi state igre [^5] dok klijenti čuvaju kopije i ažuriraju ih po potrebi.[1] Problem je što igra ima jedan point of failure odnosno ako server padne, svim igračima će igra biti prekinuta. Sa ovakvim pristupom dosta napada malicioznih korisnika se automatski eliminiše jer je glavni state igre na samom serveru. A korisnici mogu samo svoje stanje da ažuriraju slanjem paketa informacija koji sadrže samo njihove izmene, a neretko te izmene su u vidu signala sa pomeraj ili pucanje iz puške, time se smanjuje količina informacija koje korisnik šalje na server i smanjuje se šansa da nekom svojim input-om naruši autoritet igre.
 
 <p align="center">
   <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Client-server%20arhitektura.png" />
@@ -45,7 +45,7 @@ U daljem tekstu više je opisana client-server arhitektura jer je danas zastuplj
 
 ## Načini komunikacije u video igrama
 
-  Sa razvitkom online igara pojavio se problem latency-a, što predstavlja vreme za koje će korisnički input doći do servera, server obraditi korisnički input i vratiti mu povratnu informaciju u visu novog state-a igre. Ovaj proces se naziva Round trip time odnosno skraćeno RTT [^9]. Da bi se poboljšao odziv, server i klijent neretko dele isti ili sličan kod za ažuriranje stanja determinističkih inputa korisnika.
+  Sa razvitkom online igara pojavio se problem latency-a, što predstavlja vreme za koje će korisnički input doći do servera, server obraditi korisnički input i vratiti mu povratnu informaciju u visu novog state-a igre. Ovaj proces se naziva Round trip time odnosno skraćeno RTT [^9]. Da bi se poboljšao odziv, server i klijent neretko dele isti ili sličan kod za ažuriranje stanja determinističkih inputa korisnika.[1]
 
 <p align="center">
   <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Rount%20trip%20time%20primer.png" />
@@ -62,7 +62,7 @@ U daljem tekstu više je opisana client-server arhitektura jer je danas zastuplj
 
 ### Slanje više poslednjih paketa input-a
 
-  Sistem po kome se uz najnoviji input, šalje i nekoliko prethodnih u slučaju da neki paket nije stigao, Na osnovu toga server će znati koje pakete input-a treba da primeni na state igre. Problem nastaje što se redudantno šalju input-i koji su verovatno već primenjeni.
+  Sistem po kome se uz najnoviji input, šalje i nekoliko prethodnih u slučaju da neki paket nije stigao, Na osnovu toga server će znati koje pakete input-a treba da primeni na state igre. Problem nastaje što se redudantno šalju input-i koji su verovatno već primenjeni.[1]
 
 <p align="center">
   <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Slanje%20više%20poslednjih%20paketa%20inputpng.png" />
@@ -73,7 +73,7 @@ U daljem tekstu više je opisana client-server arhitektura jer je danas zastuplj
 
 ### Keširanje par paketa input-a
 
-  Klijent kešira par paketa input-a kod sebe i šalje najnoviji paket input-a zajedno sa informacijom da nije dobio odziv za odredjene pakete. Server mu zatim odgovara ukoliko neki paket fali ili mu javlja da je paket uspešno obradjen, nakon toga klijent šalje pakete koji fale na serverskoj strani. Mana je što se ne poštuje vreme primene input-a a neki inputi se moraju obraditi sekvencijalno.
+  Klijent kešira par paketa input-a kod sebe i šalje najnoviji paket input-a zajedno sa informacijom da nije dobio odziv za odredjene pakete. Server mu zatim odgovara ukoliko neki paket fali ili mu javlja da je paket uspešno obradjen, nakon toga klijent šalje pakete koji fale na serverskoj strani. Mana je što se ne poštuje vreme primene input-a a neki inputi se moraju obraditi sekvencijalno.[1]
 
 <p align="center">
   <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Slike/Keširanje%20par%20paketa%20input.png" />
@@ -84,8 +84,14 @@ U daljem tekstu više je opisana client-server arhitektura jer je danas zastuplj
 
 ## Značenje izbora arhitekture i načini odbrane od napada preko UDP konekcije
 
-  Kao što je već spomenuto Client-server arhitektura je sigurnija od Peer-to-peer arhitekture jer postoji validaciono telo u vidu servera koje će svaki input korisnika validirati. Kada postoji UDP komunikacija, da bi korisniku, u ovom slučaju napadaču smanjili polje napada omogućavamo slanje samo neophodnih podataka u vidu signala, idi gore, idi levo, pucaj i slično, a ako je baš neophodna detaljnija poruka onda je validiramo pri dolasku do servera, takodje treba validirati i signale za odredjene akcije ukoliko pristigne više signala koji nisu medjusobno kompatibilni. Takodje moguća je potreba da se ubaci dodatna validacija sa klijentske strane da ne bi došlo do toga da tokom igre jedan od korisnika dospe do drugog i krene da mu šalje podatke umesto servera odnosno da sprečimo druge korisnike da koriste spoofing i time postignu denial of service ali ne sa serverske strane nego da onesposobe klijenta da prikuplja informacije sa servera. Moguć način odbrane od takvog napada jeste da se enkriptuje UDP razmena poruka i da se adrese kod nas čuvaju enkriptovane i time zaštite korisnika od napada.
-  
+  Kao što je već spomenuto Client-server arhitektura je sigurnija od Peer-to-peer arhitekture jer postoji validaciono telo u vidu servera koje će svaki input korisnika validirati. Kada postoji UDP komunikacija, da bi korisniku, u ovom slučaju napadaču smanjili polje napada omogućavamo slanje samo neophodnih podataka u vidu signala, idi gore, idi levo, pucaj i slično, a ako je baš neophodna detaljnija poruka onda je validiramo pri dolasku do servera, takodje treba validirati i signale za odredjene akcije ukoliko pristigne više signala koji nisu medjusobno kompatibilni. Takodje moguća je potreba da se ubaci dodatna validacija sa klijentske strane da ne bi došlo do toga da tokom igre jedan od korisnika dospe do drugog i krene da mu šalje podatke umesto servera odnosno da sprečimo druge korisnike da koriste spoofing i time postignu denial of service ali ne sa serverske strane nego da onesposobe klijenta da prikuplja informacije sa servera. Moguć način odbrane od takvog napada jeste da se enkriptuje UDP razmena poruka i da se adrese kod nas čuvaju enkriptovane i time zaštite korisnika od napada[2].
+
+## Reference
+
+[1] [Analiza arhitekture sistema i protokola](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Real-time%20Multiplayer%20Software%20Architecture.pdf)
+
+[2] [Sigurnost i kradja podataka iz protokola](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Real-time%20Multiplayer%20Software%20Architecture%20and%20protocol%20threat%20mitigation/Real-time%20Multiplayer%20Software%20Architecture.pdf)
+
 
 ## Rečnik pojmova
 
