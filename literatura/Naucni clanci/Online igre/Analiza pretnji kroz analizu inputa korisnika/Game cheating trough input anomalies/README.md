@@ -2,7 +2,7 @@
 
 ## Pronalazak botova u video igrama
 
-### Online game bot detection based on party-play log analysis
+### Online game bot detection based on party-play log analysis [1]
 
   Članak prokiva pronalaženje botova u video igrama po sistemu analize logova na serveru, igra koja se analizira u članku je AION MMORPG[^10] igra od kompanije NCsoft. Svaki input korisnika se analizira i pamti u odredjenim logovima na serveru, Predloženi načini detekcije botova su bili i detekcije sa klijentske strane, detekcije na mreži i detekcije na serverskoj strani
 
@@ -36,7 +36,7 @@
 
 Problem koji nastaje u ovakvnom načinu detekcije je što se logovi moraju već napraviti, nije moguća detekcija u realnom vremenu, ali sa druge strane može biti znatno jednostavniji od drugog pristupa koji će biti analiziran.
 
-### Efficient Deep Learning Bot Detection in Games Using Time Windows and Long Short-Term Memory (LSTM)
+### Efficient Deep Learning Bot Detection in Games Using Time Windows and Long Short-Term Memory (LSTM) [2]
 
   Članak koji pokriva detekciju botova putem neuronske mreže. Sobzirom na razvoj veštačke inteligencije u poslednjih par godina, domen veštačke inteligencije došao je i do botova za video igre, gde se stariji sistemi za detekciju botova mogu pomučiti da otkriju da li je korisnik bot. Zbog toga se u članku opisuje razvitak neuronske mreže za detekciju botova u strateškoj igri StarCraft: Brood War.
 
@@ -64,7 +64,7 @@ Problem koji nastaje u ovakvnom načinu detekcije je što se logovi moraju već 
 
   Ako ukombinujemo prethodna dva članka najbolje unapredjenje neuronske mreže jeste da se detaljno obradi logovanje inputa korisnika i time napravi nova neuronska mreža sa podacima tih logova.
 
-## Detekcija cheat-ovanja[^2] u video igrama
+## Detekcija cheat-ovanja[^2] u video igrama [3]
 
 ### Deep learning and multivariate time series for cheat detection in video games
 
@@ -92,6 +92,14 @@ Analizirani su input-i 118 korisnika, od koji su 8 aktivno koristili Software za
 
   Još jedan sistem za detekciju cheat-ovanja u video igrama koji je implementiran u igri Counter Strike je pod nazivom Overwatch, sistem koji igračima koji su se pokazali umešni u igri i koji pošteno igraju igru omogućava da pregledaju snimak igrača koji su bili prijavljeni za cheat-ovanje i da osude osumnjičenog da li je cheat-ovao ili ne. Ukoliko pogode, ubuduće će se njihov glas više vrednovati pri osudi. Problem je što traži aktivan prolazak korisnika kroz snimke da bi osudio osumnjičenog.
 
+
+## Reference
+
+[1] [Online game bot detection based on party-play log analysis](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Game%20cheating%20trough%20input%20anomalies/Online%20game%20bot%20detection%20based%20on%20party-play%20log%20analysis.pdf)
+
+[2] [Efficient Deep Learning Bot Detection in Games Using Time Windows and Long Short-Term Memory (LSTM)](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Game%20cheating%20trough%20input%20anomalies/Efficient%20Deep%20Learning%20Bot%20Detection%20in%20Games(LSTM).pdf)
+
+[3] [Deep learning and multivariate time series for cheat detection in video games](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Game%20cheating%20trough%20input%20anomalies/Deep%20learning%20and%20multivariate%20time%20series%20for%20cheat%20detection%20in%20video%20games.pdf)
 
 ## Rečnik pojmova
 
