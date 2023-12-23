@@ -15,7 +15,7 @@
   Dati članak se fokusirao na analizu logova korisnika koji su bili u party play-u [^7] time su limitirali količinu logova za analizu na samo taj aspekat zajedničke igre, Nakon analize utvrdili su da vreme koje korisnici provedu u party play-u dirketno ima korelaciju sa time koje su šanse da je korisnik bot. Ukoliko su korisnici proveli 12 ili 24 sata u party play-u šanse da je u pitanju bot su daleko veće. Isto tako analizom vrste logova primetilo se da botovi ostavljaju daleko veću količinu logova za levelovanje [^8] likova, prikupljanje resursa i trade-ovanje, dok su logovi običnih korisnika ravnomerno rasporedjeni. Time se zaključilo da je glavni cilj botova da leveluju naloge i prikupljaju In-game novac [^9]. 
   
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Online%20game%20bot%20detection%20based%20on%20party-play%20log%20analysis/Broj%20igrača%20po%20vremenu%20u%20party%20play-u.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Game%20cheating%20trough%20input%20anomalies/Slike/Online%20game%20bot%20detection%20based%20on%20party-play%20log%20analysis/Broj%20igrača%20po%20vremenu%20u%20party%20play-u.png" />
 </p>
 
 <p align="center">
@@ -27,7 +27,7 @@
   Ovakav sistem za detekciju botova daje preciznost od 96% tačnosti.
 
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Online%20game%20bot%20detection%20based%20on%20party-play%20log%20analysis/Raspodela%20logova%20po%20vremenu%20u%20party%20play-u.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Game%20cheating%20trough%20input%20anomalies/Slike/Online%20game%20bot%20detection%20based%20on%20party-play%20log%20analysis/Raspodela%20logova%20po%20vremenu%20u%20party%20play-u.png" />
 </p>
 
 <p align="center">
@@ -43,7 +43,7 @@ Problem koji nastaje u ovakvnom načinu detekcije je što se logovi moraju već 
   Princip koji su koristili je LSTM(Long Short-Term Memory) neuronske mreže. Za razliku od Rekurzivnih neuronskih mreža LSTM mreže traže manje resursa i brže su, samim tim i pogodnije za obradu velike količine igrača. Neuronska mreža ovakvog tipa pokazala se pogodna za detekciju botova, jer najbolje rezultate pokazuje za kratko vreme analize, testirano je na vremenskim intervalima od 15, 30,45 i 60 sekundi, a najbolje se pokazala za 15 i 30 sekundi pa je izbor pao na detekciju od 15 sekundi jer je detekcija na 30 sekundi neznatno bolja 15 sekundi, ali je potrebno duplo kraće vreme za detekciju. 
 
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Efficient%20Deep%20Learning%20Bot%20Detection%20in%20Games(LSTM)/Primer%20obučavanja%20po%20vremenskim%20intervalima.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Game%20cheating%20trough%20input%20anomalies/Slike/Efficient%20Deep%20Learning%20Bot%20Detection%20in%20Games(LSTM)/Primer%20obučavanja%20po%20vremenskim%20intervalima.png" />
 </p>
 
 <p align="center">
@@ -53,7 +53,7 @@ Problem koji nastaje u ovakvnom načinu detekcije je što se logovi moraju već 
   Neuronska mreža ovog tipa imala je četiri ulaza koji su skalirani na vrednosti izmedju 0 i 1, Ulazi su bili broj frame-a[^11], drugi parametar jeste broj selektovanih trupa, a treći i četvrti parametar su X i Z koordinate miša. Izlaz je bio jedan i predstavljao je detekciju da li je korisnik bot. Izmedju su se nalazila dva sloja LTSM neuronske mreže sa 64 čvora po svakom sloju.
 
   <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Efficient%20Deep%20Learning%20Bot%20Detection%20in%20Games(LSTM)/Primer%20neuronske%20mreže%20iz%20članka.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Game%20cheating%20trough%20input%20anomalies/Slike/Efficient%20Deep%20Learning%20Bot%20Detection%20in%20Games(LSTM)/Primer%20neuronske%20mreže%20iz%20članka.png" />
 </p>
 
 <p align="center">
@@ -73,7 +73,7 @@ Problem koji nastaje u ovakvnom načinu detekcije je što se logovi moraju već 
   Neuronska mreža je imala 3 konvoluciona medjusloja i 10 ulaza u vidu specifičnih input-a korisnika kao što su W, A, S, D tasteri, levi i desni klik miša kao i pozicija miša po X i Y koordinati i razlike u poziciji miša po X i Y koordinati. Na izlazu se dobija informacija da li korisnik vara u igri ili ne.
 
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Deep%20learning%20and%20multivariate%20time%20series%20for%20cheat%20detection%20in%20video%20games/Primer%20neuronske%20mreže%20koja%20je%20korišćena.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Game%20cheating%20trough%20input%20anomalies/Slike/Deep%20learning%20and%20multivariate%20time%20series%20for%20cheat%20detection%20in%20video%20games/Primer%20neuronske%20mreže%20koja%20je%20korišćena.png" />
 </p>
 
 <p align="center">
@@ -83,7 +83,7 @@ Problem koji nastaje u ovakvnom načinu detekcije je što se logovi moraju već 
 Analizirani su input-i 118 korisnika, od koji su 8 aktivno koristili Software za cheat-ovanje. Relativno mala količina korisnika ali dovoljna količina Materijala koji su obradjivani jer je uzeto oko 500 sati materijala.
 
 <p align="center">
-  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Game%20cheating%20trough%20input%20anomalies/Slike/Deep%20learning%20and%20multivariate%20time%20series%20for%20cheat%20detection%20in%20video%20games/Statistika%20analiziranih%20podataka.png" />
+  <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Game%20cheating%20trough%20input%20anomalies/Slike/Deep%20learning%20and%20multivariate%20time%20series%20for%20cheat%20detection%20in%20video%20games/Statistika%20analiziranih%20podataka.png" />
 </p>
 
 <p align="center">
