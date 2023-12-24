@@ -6,7 +6,7 @@ S obzirom da je većina biblioteka održavana od strane pojedinačnih developera
 Pretnje koje se mogu dogoditi u ovakvim sistemima su razne, ali ćemo se fokusirati na specifičnu pretnju i to neovlašten pristup sistemu servera. Motiv napadača je najčešće lična upotreba resursa koje je prethodno osvojio(skidanje torent sadržaja, server može postati učesnik ddos napada) ili narušavanje sposobnosti samog sistema. 
 
 <p align="center">
-    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%biblioteka%20za%20razvoj/Slike/ModelPretnji.png"/>
+    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20biblioteka%20za%20razvoj/Slike/ModelPretnji.png"/>
 </p>
 <p align="center">
     Dijagram pretnji
