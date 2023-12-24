@@ -12,8 +12,6 @@ Moguće pretnje koje vrebaju sisteme za plaćanje u video igrama su:
     - U ovom slučaju, napadač za cilj ima da ograniči ili u potpunosti odseče sistem za plaćanje od sistema za igru, kako bi sprečio korisnika da izvrši transakciju(plati
     subskripciju, kupi asset). Ovime napadač može da stekne prednost u odnosu na drugog igrača ili da našteti samom sistemu video igre, narušavajući njegovu funkcionalnost.
 
-## Pretnje, Napadi, Mitigacije
-
 <p align="center">
     <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20sistema%20za%20placanje/Slike/ModelPretnji.png"/>
 </p>
