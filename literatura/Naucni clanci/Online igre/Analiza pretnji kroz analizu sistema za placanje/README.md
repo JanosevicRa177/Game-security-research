@@ -37,10 +37,10 @@ Najčešće mesto gde se prosledjuje potpis, jesu header-i zahteva. Ova mitigaci
 
 - Idempotentnost [^3] predstavlja još jedno od rešenja za ovakav problem. Koncept idempotentnosti govori o tome da se jedan zahtev može obraditi samo jedanput. Ukoliko je idempotentnost endpointa korektno implementirana, timestamp-ovi nisu potrebni kao dodatna zaštita. 
 
-### DDOS napad na endpointe za kupovinu resursa u igri
+### DDOS napad na endpointe za kupovinu resursa u igri [2]
 DDOS(Distributed Denial of Service) je jedan od najpoznatijih napada na sisteme svih vrsta. Cilj ovakvog napada jeste da se zaustavi u potpunosti ili smanji koliko je moguće, saobraćaj prema odredjenom servisu. Online video igre nisu izuzetak od ovakvih napada, te napadači za cilj mogu imati razne stvari. Jedan od ciljeva bi mogao da bude sprečavanje regularnih korisnika da kupuju assete u igri. Razlog za sprečavanje bi bilo ostvarivanje prednosti nad protivnicima u competitive[^6] igrama. Ovakva vrsta napada se može izvesti na više načina a najčešća je upotreba distribuiranog napada sa više servera koji svi u isto vreme pokušavaju da preplave sistem sa zahtevima. 
 
-### Mitigacije [2]
+### Mitigacije 
 - Firewall predstavlja jednu od osnovih vrsta zaštite od DOS napada. Firewall može biti postavljen i na softverskom i na hardverskom nivou, te je njegova uloga da filtrira saobraćaj u zavisnosti od toga kako je podešen.[4]
 - Ip whitelisting/blacklisting [^4] kao i u prethodnom primeru može da posluži za zabranu saobraćaja sa nepoželjnih ip adresa. Kao i firewall uloga mu je da vrsi filtraciju i smanji mogućnost napada na sistem.[3]
 - Jedna od najbitnijih odbrana sistema od DOS napada jesu load balanceri. Load balanceri služe za izjednačavanje saobraćaja izmedju deployanih instanci sistema, a samim tim sprečavaju opterećavanje pojedinačnih instanci sistema. Ovime se postiže da su svi delovi sistema podjednako opterećeni i da se padovi instanci radi saobraćaja ne dešavaju tako često.[3]
@@ -56,14 +56,14 @@ DDOS(Distributed Denial of Service) je jedan od najpoznatijih napada na sisteme 
 
 [4] https://ddos-guard.net/en/blog/what-is-a-firewall-and-how-it-works
 
-[^1] Asset - Bilo koji resurs u video igrama(specijalni item-i, moći, bilo šta što može da se kupi i iskoristi u igri)
+[^1]: Asset - Bilo koji resurs u video igrama(specijalni item-i, moći, bilo šta što može da se kupi i iskoristi u igri)
 
-[^2] Webhook - Http zahtev koji šalje platforma sa kojom je sistem integrisan kako bi dojavila promenu stanja resursa
+[^2]: Webhook - Http zahtev koji šalje platforma sa kojom je sistem integrisan kako bi dojavila promenu stanja resursa
 
-[^3] Idempotentnost - svojstvo operacije gde višestruko primenjivanje proizvodi isti rezultat kao i jednokratna primena
+[^3]: Idempotentnost - svojstvo operacije gde višestruko primenjivanje proizvodi isti rezultat kao i jednokratna primena
 
-[^4] Ip whitelisting - Sve ip adrese koje se nalaze na listi imaju dozvolu pristupa
+[^4]: Ip whitelisting - Sve ip adrese koje se nalaze na listi imaju dozvolu pristupa
 
-[^5] Ip blacklisting - Sve ip adrese koje se nalaze na listi nemaju dozvolu pristupa
+[^5]: Ip blacklisting - Sve ip adrese koje se nalaze na listi nemaju dozvolu pristupa
 
-[^6] Competitive igre - Takmičarske igre, igre koje zahtevaju veliku umešnost, reflekse i znanje o samoj igri
+[^6]: Competitive igre - Takmičarske igre, igre koje zahtevaju veliku umešnost, reflekse i znanje o samoj igri
