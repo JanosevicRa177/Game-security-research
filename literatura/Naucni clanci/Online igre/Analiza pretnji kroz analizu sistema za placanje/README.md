@@ -15,7 +15,7 @@ Moguće pretnje koje vrebaju sisteme za plaćanje u video igrama su:
 ## Pretnje, Napadi, Mitigacije
 
 <p align="center">
-    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika/Slike/modelovanje%20pretnji%20game%20inputa.png"/>
+    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20sistema%20za%20placanje/Slike/ModelPretnji.png"/>
 </p>
 <p align="center">
     Dijagram pretnji
@@ -49,12 +49,21 @@ DDOS(Distributed Denial of Service) je jedan od najpoznatijih napada na sisteme 
 
 ## Reference
 [1] https://hookdeck.com/webhooks/guides/webhook-security-vulnerabilities-guide
+
 [2] https://www.fortinet.com/resources/cyberglossary/dos-vs-ddos
+
 [3] https://aws.amazon.com/shield/ddos-attack-protection/
+
 [4] https://ddos-guard.net/en/blog/what-is-a-firewall-and-how-it-works
+
 [^1] Asset - Bilo koji resurs u video igrama(specijalni item-i, moći, bilo šta što može da se kupi i iskoristi u igri)
+
 [^2] Webhook - Http zahtev koji šalje platforma sa kojom je sistem integrisan kako bi dojavila promenu stanja resursa
+
 [^3] Idempotentnost - svojstvo operacije gde višestruko primenjivanje proizvodi isti rezultat kao i jednokratna primena
+
 [^4] Ip whitelisting - Sve ip adrese koje se nalaze na listi imaju dozvolu pristupa
+
 [^5] Ip blacklisting - Sve ip adrese koje se nalaze na listi nemaju dozvolu pristupa
+
 [^6] Competitive igre - Takmičarske igre, igre koje zahtevaju veliku umešnost, reflekse i znanje o samoj igri
