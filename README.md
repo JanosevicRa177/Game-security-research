@@ -8,7 +8,9 @@ Spomenuće se i razvoj DRM[1] sistema i njihova primena u video igrama. Kao i si
 [Dekompozicija modula](https://github.com/JanosevicRa177/Game-security-research/tree/main/Dekompozicija%20modula) : Opis i prikaz dekompozicije arhitekture online video igre za trke automobila.
 
 [Analiza pretnji kroz inpute korisnika](https://github.com/JanosevicRa177/Game-security-research/tree/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20inputa%20korisnika) : Prolazak kroz najčešće načine napada tokom igre. Analiza celokupnog sistema razmene stanja igre i inputa korisnika.
+
 [Analiza pretnji kroz analizu biblioteka za razvoj](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20biblioteka%20za%20razvoj)
+
 [Analiza pretnji kroz analizu sistema za placanje u video igrama](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20sistema%20za%20placanje)
 
 ## Članovi tima
