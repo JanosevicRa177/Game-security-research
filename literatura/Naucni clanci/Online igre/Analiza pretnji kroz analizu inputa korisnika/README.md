@@ -40,11 +40,15 @@ Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napad
 
 ## Kradja korisničkih podataka u igri
 
+### Napadi
+
   Poznat napad "Man in the middle" koji predstavlja prisluškivanje poruka koje pristižu na server od korisnika sistema, moguća je i izmena datih podataka ali nije tema pretnje ovakvog sistema, zato što napadač nema neku dobit u izmeni podataka, ono što mu je bitnije jeste da dopre do podataka o korisniku koji mu omogućavaju razne druge napade. Svakim input-om korisnika, šalju se podaci od ID-u korisnika kao i odakle je podataka došao (IP adresa korisnika). Ukoliko napadač prisluškuje mrežu može doći do ovih podataka i zloupotrebiti ih.
 
   Sličan napad gde napadač može doći do identičnih podataka o korisnicima jeste ukoliko uspe da dospe do keširanih podataka sa game servera. Tada suštinski dobija iste podatke o korisnicima a uz to dobija celokupnu sliku state-a igre.
   
   Napadač ovim podacima može izbacivati korisnika uporno sa game servera čime će mu onemogućiti da učestvuje u igri i realizovati **Denial of service** napad ali sa strane klijenta. Isto tako ako poseduje njegovu adresu može preplaviti klijentski deo igre nepotrebnim saobraćajem i uvesti kašnjenje izmedju klijenta i servera i time na skroz drugačiji način realizovati **Denial of service** napad. Isto tako može slati inpute umesto korisnika i time spoof-ovati korisnika. Dalje mitigacije će ovaj problem dalje proširiti.
+
+### Mitigacije
 
   Da bismo korisnika zaštitili od ovakvih napada, postoje par mitigacija koje će zaštititi sistem od daljeg razaranja sistema. Ukoliko napadač već poseduje Id korisnika ili njegovu adresu, sistem je već probijen. Tako da se mora realizovati jaka zaštita na nivou podataka koji pristižu na server i koji se čuvaju na serveru.
 
@@ -54,11 +58,15 @@ Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napad
 
 ## Nekontrolisano slanje input-a
 
+### DoS napad na server
+
   Napad koji je poznat kao **Denial of Service** napad koji smo do sad već spomenuli, u ovom slučaju napad je na sam server. Gde je cilj da se server preplavi podacima i time smanji odziv servera ili u potpunosti prekine konekcija na server. Način na koji se ovaj napad realizuje jeste da se šalje veći deo podataka nego što server može da primi.
 
   Mitigacija ovakvog napada se realizuje delom kroz samu arhitekturu sistema. Serveri većinski primaju podatke od korisnika po odredjenom tick rate-u[^4] koji predstavlja koliko korisničkih podataka server može da obradi u sekundi [1]. Tako da server kroz samu arhitekturu rešava ovakav problem jer prihvata samo jedan korisnički input u odredjenom vremenskom intervalu, a ostale ignoriše od datog korisnika. Još jedan način koji nije toliko kvalitetan jeste da se detektuju sa kojih adresa dolazi previše paketa i da se IP adrese tih korisnika blacklist-uju, ili ako je u pitanju neki interni server za igre možemo da korisnimo whitelist sistem da dopustimo pristup samo korisnicima kojima mi želimo. Blacklist i whitelist[^5] sistemi se više koriste kada korisnici imaju svoje servere, ako je malo veći server blacklist a ako je tipa server samo za mali skup korisnika(tipa grupa prijatelja) koristiće se whitelist mehanizam.
 
   Isto tako ako se desi navala podataka od raznih korisnika moguća je privremena zaštita kroz instanciranje više game servera i ubacivanje load balancing sloja da ravnomerno šalje korisnike na njih. Ovakav sistem je obradjen kroz samu dekompoziciju modula sistema.
+
+### Napad na state igre
 
   Napad koji se odnosi na state-igre predstavlja omogućavanje napadaču da utiče na state igre na način koji nije predvidjen. Ukoliko korisniku omogućimo da šalje veliku količinu podataka na server, velike su šanse da će na taj način naći kako da eksploatiše sistem. Isto tako odredjene grupe arhitektura su sigurnije od drugih zato što poseduju telo koje će posedovati stvaran state igre. Primer su razlike izmedju Peer-to-Peer arhitektura i Client-Server arhitektura, Client-Server arthitektura je drastično lakša sa osigurati jer poseduje Validaciono telo i vidu servera, dok kod Peer-to-Peer arhitekture svaki korisnik šalje svim korisnicima svoje inpute i svaki korisnik ima svoj state.[1]
   
@@ -68,9 +76,13 @@ Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napad
 
   Pod naprednim anomalijama inputa svrstavaju se paketi informacija koji se šalju na server koji su sintaksno i po tehničnoj semantici ispravni, ali kada ljudsko biće pogleda date podatke primećuje da date inpute ne može proizvesti čovek. Ovo su najčešći napadi na video igre, koje napadaču mogu doneti neku vrednost jako brzo, ili u vidu resursa ili u vidu poena veštine. Većina ovakvih napada je lako realizovati zato što postoje grupe ljudi koji prodaju software koji omogućava ovakve napade.
 
+### Napadi
+
   Postoje dva glavna načina napada naprednih anomalija, jedan jeste korišćenje botova da sakupljaju resurse. Time se može narušiti In-game ekonomija i obesmisliti korisničko prikupljanje resursa. Isto tako botovi mogu level-ovati korisničke likove i time ubrzati proces napretka u igri. Botovi neretko mogu neke strateške igre igrati i bolje od ljudi pa može biti jako frustrirajuće igrati protiv nekog protiv koga će korisnik sigurno izgubiti partiju a time i svoje vreme. 
   
   Drugi način napada jeste korišćenje nedozvoljenog software-a u competitive igrama kao što su Counter Strike 2, League of Legends, DOTA 2 i slične igre koje zahtevaju izuzetno umeće i reflekse korisnika. Napadač će sa uključenim software-om pristupiti igri i uz pomoć njega imati veliku prednost jer neće morati da reaguje na odredjene elemente igre jer će na njih reagovati sam nedozvoljeni software. 
+
+### Mitigacije
 
   Postoje razni načini mitigacija ovakvih napada i razvijali su se više godina unazad, i dan danas ne postoji potpuna mitigacija ovakvog napada jer napadi evoluiraju iz dana u dan. Načini koji su bili standardni ranije za mitigaciju ovakvih napada jeste logovanje inputa korisnika u odredjene fajlove a zatim analiza datih podataka[2]. Time je omogućeno efektivno pronalaženje botova u video igrama, a isto tako i pronalaženje korisnika koji koriste nedozvoljeni software u competitive video igrama. Problem nastaje što ovakav način detekcije i mitigacije zahteva da prodje neko vreme od napada. I da se nakon toga analiziraju logovi i pronadju napadači. Ovo može biti jako stresno za korisnika koji igra protiv napadača, a u slučaju botova, botovi mogu već prodati i predati skupljene resurse trećem licu i time negirati štetu napadaču.
 
