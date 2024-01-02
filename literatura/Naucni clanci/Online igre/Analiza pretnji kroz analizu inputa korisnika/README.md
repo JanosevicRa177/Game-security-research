@@ -33,7 +33,7 @@
 </p>
 
 <p align="center">
-  Model pretnji i napada sa svojim mitigacijama
+  Stablo napada
 </p>
 
 Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napade koji su vezani za datu pretnju i opisati na koji način se sistem može zaštititi od datih pretnji.
