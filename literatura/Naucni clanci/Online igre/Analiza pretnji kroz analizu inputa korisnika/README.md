@@ -77,13 +77,15 @@ Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napad
         "type": "action",
         "actionName": "shoot"
       }
-    ]
+    ],
+   "timestamp": 1643263745
   }
 }
 ```
 #### Primer enkriptovanih podataka
 
-Ovako bi izgledali enkriptovani podaci iz gornjeg slčaja, razlog što se ekriptuje sve jeste što ako enkriptujemo samo ID, smanjujemo količinu podataka koju ekriptujemo ali drastično komplikujemo način enkripcije, problematično je odlučiti se koliku količinu podataka enkriptovati, u ovom slučaju kada se otpočne komunikacija izmedju klijenta i servera razmeni se simetrični ključ sa kojim će podaci biti enkriptovani tokom sesije igre. Ovo je primer enkriptovanih podataka iz gornjeg slučaja enkriptovani AES algoritmom.
+Ovako bi izgledali enkriptovani podaci iz gornjeg slčaja, razlog što se ekriptuje sve jeste što ako enkriptujemo samo ID, smanjujemo količinu podataka koju ekriptujemo ali drastično komplikujemo način enkripcije, problematično je odlučiti se koliku količinu podataka enkriptovati, u ovom slučaju kada se otpočne komunikacija izmedju klijenta i servera razmeni se simetrični ključ sa kojim će podaci biti enkriptovani tokom sesije igre. Ovo je primer enkriptovanih podataka iz gornjeg slučaja enkriptovani AES algoritmom. Jo[ jedan dodatni podatak se šalje u vidu timestamp-a koji predstavlja vreme kada je poslat podatak, server će nakon analize input-a proveriti da li je timestamp u dozvoljenom vremenskom intervalu i prihvatiti podatke ukoliko su poslati u adekvatnom vremenskom intervalu.
+
   ```
 19CEE434F5518F6388BE362DAF51398596D9C535787B868C34EA3762DF12CAF7B6423
 2E471A1577A2303B025D2A5D40A9C355E284B79395E59602EB2262DEEF639F7BCE879
