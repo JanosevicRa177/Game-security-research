@@ -58,7 +58,41 @@ Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napad
 
   Enkripcija sa serverske strane će imati svoj ključ za enkripciju dok će svaki od korisnika imati svoj ključ za razmenu podataka izmedju servera i klijenta. Ukoliko je igra koja funkcioniše po principu partija koje traju od 10 minuta do sat vremena, za svaku sesiju partije će se korisniku generisati ključ za enkripciju, dok ukoliko je igra koja ne funkcioniše po principu partija već dugih sesija igranja generisaće se novi ključ posle odredjenog vremena. Time je korisnik u potpunosti zaštićen od kradje svojih podataka.
 
-## Nekontrolisano slanje input-a
+  ### Primer
+
+#### Primer ne enkriptovanih podataka
+
+  Prikazan je primer jednog validnog input-a koji se šalje na server, iako je on semantički dobar i pogodan za slanje na server, otvoren je za kradju podatka o korisniku, u ovom slučaju krade se ID korisnika.
+  
+  ```
+{
+  "player": {
+    "id": f47ac10b-58cc-4372-a567-0e02b2c3d479,
+    "actions": [
+      {
+        "type": "move",
+        "direction": "up"
+      },
+      {
+        "type": "action",
+        "actionName": "shoot"
+      }
+    ]
+  }
+}
+```
+#### Primer enkriptovanih podataka
+
+Ovako bi izgledali enkriptovani podaci iz gornjeg slčaja, razlog što se ekriptuje sve jeste što ako enkriptujemo samo ID, smanjujemo količinu podataka koju ekriptujemo ali drastično komplikujemo način enkripcije, problematično je odlučiti se koliku količinu podataka enkriptovati, u ovom slučaju kada se otpočne komunikacija izmedju klijenta i servera razmeni se simetrični ključ sa kojim će podaci biti enkriptovani tokom sesije igre. Ovo je primer enkriptovanih podataka iz gornjeg slučaja enkriptovani AES algoritmom.
+  ```
+19CEE434F5518F6388BE362DAF51398596D9C535787B868C34EA3762DF12CAF7B6423
+2E471A1577A2303B025D2A5D40A9C355E284B79395E59602EB2262DEEF639F7BCE879
+168E1CC027D427B9DD92C3ABFD2C855F19B3356A171772BB695F7916D58923EC16605
+5677510B53756B6BAD31F6215301D6278455C3C004D4DA6875D64A56A0B140A3887FB
+EB9F46266A86DBA58BED56038B61000DD23943F18F96232671371FC1DDEAE3D50AE4A
+3A5F1D9DB9416567DC3D1A1E36792EE3C2C22666D980595B92D9F7C6D17E1ACBFCC71
+D4A4EEB8D8602FCCF5CE829519DD4F913DF1C53B9B3992AC6C66C6D346C2A0CE06
+```
 
 ## Denial of Service sa strane servera
 
@@ -75,6 +109,55 @@ Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napad
   Napad koji se odnosi na state-igre predstavlja omogućavanje napadaču da utiče na state igre na način koji nije predvidjen. Ukoliko korisniku omogućimo da šalje veliku količinu podataka na server, velike su šanse da će na taj način naći kako da eksploatiše sistem. Isto tako odredjene grupe arhitektura su sigurnije od drugih zato što poseduju telo koje će posedovati stvaran state igre. Primer su razlike izmedju Peer-to-Peer arhitektura i Client-Server arhitektura, Client-Server arthitektura je drastično lakša sa osigurati jer poseduje Validaciono telo i vidu servera, dok kod Peer-to-Peer arhitekture svaki korisnik šalje svim korisnicima svoje inpute i svaki korisnik ima svoj state.[1]
   
   Što se više podataka šalje na server, to je potrebno više podataka validirati. Da bi korisniku smanjili mogućnosti da naruši state igre uglavnom se šalju samo signali da korisnik nešto želi da odradi, ili eventualno jako mali skup podataka koji je lako validirati[1].
+
+  ### Primer slanja inputa
+
+  U naredna dva primera pokazaćemo na koji način se input-i ne smeju slati iz raznih razloga. Ili time što samom korisniku koji je mogući napadač omogućavamo veću kontrolu, ili otkrivamo previše informacija o korisniku.
+
+#### Primer lošeg slanja input-a
+
+  U ovom lošem primeru slanja inputa, korisnik šalje preveliku količinu informacija čime povećava vreme odziva, otkriva previše informacija o sebi što ako postoji napadač koji prisluškuje mrežu može iskoristiti protiv korisnika. Isto tako ako je napadač onaj koji šalje input-e, dajemo mu slobodu da eksploatiše bilo koji vid input-a koji se šalje. Uvodimo potrebu da nepotrebnom validacijom raznih vrsta inputa na serverskoj strani, i time povećavamo šansu da napravimo grešku pri validaciji.
+  
+```
+{
+  "player": {
+    "id": f47ac10b-58cc-4372-a567-0e02b2c3d479,
+    "name": "Player1",
+    "status": {
+      "health": 100,
+      "ammo": 50,
+      "level": 5,
+      "score": 1200
+    },
+    "position": {"x": 30, "y": 40},
+    "inventory": {
+      "weapons": ["gun", "knife", "grenade"],
+      "items": ["health_potion", "speed_boost"]
+    }
+  }
+}
+```
+
+#### Primer dobrog slanja input-a
+
+  Ovakav primer slanja inputa je drastično bolji od prethodnog jer otkrivamo podatke o korisniku koji samo serveru mogu biti interesantni(Sem ID-a korisnika). Plus sbog male količine podataka koja je u prenosu nije potreban visok stepen logike za validaciju input-a, a takodje je manje podataka u prenosu.
+```
+{
+  "player": {
+    "id": f47ac10b-58cc-4372-a567-0e02b2c3d479,
+    "actions": [
+      {
+        "type": "move",
+        "direction": "up"
+      },
+      {
+        "type": "action",
+        "actionName": "shoot"
+      }
+    ]
+  }
+}
+```
 
 ## Napredne anomalije input-a i sticanje uspeha ili resursa u igri
 
