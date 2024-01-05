@@ -67,7 +67,7 @@ Nakon diagrama osvrnućemo se na svaku pretnju u sistemu, detaljno opisati napad
   ```
 {
   "player": {
-    "id": f47ac10b-58cc-4372-a567-0e02b2c3d479,
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
     "actions": [
       {
         "type": "move",
@@ -118,12 +118,12 @@ D4A4EEB8D8602FCCF5CE829519DD4F913DF1C53B9B3992AC6C66C6D346C2A0CE06
 
 #### Primer lošeg slanja input-a
 
-  U ovom lošem primeru slanja inputa, korisnik šalje preveliku količinu informacija čime povećava vreme odziva, otkriva previše informacija o sebi što ako postoji napadač koji prisluškuje mrežu može iskoristiti protiv korisnika. Isto tako ako je napadač onaj koji šalje input-e, dajemo mu slobodu da eksploatiše bilo koji vid input-a koji se šalje. Uvodimo potrebu da nepotrebnom validacijom raznih vrsta inputa na serverskoj strani, i time povećavamo šansu da napravimo grešku pri validaciji.
+  U ovom lošem primeru slanja inputa, korisnik šalje preveliku količinu informacija čime povećava vreme odziva, otkriva previše informacija o sebi što ako postoji napadač koji prisluškuje mrežu može iskoristiti protiv korisnika. Isto tako ako je napadač onaj koji šalje input-e, dajemo mu slobodu da eksploatiše bilo koji vid input-a koji se šalje. Uvodimo potrebu da nepotrebnom validacijom raznih vrsta inputa na serverskoj strani, i time povećavamo šansu da napravimo grešku pri validaciji. Na primer, u ovom slučaju potrebno je proveriti na kojim koordinatama se korisnik nalazio i da li su koordinate koje pristižu validne, lakše rešenje je da samo pristigne signal, jer u suprotnom korisnik može poslati ```position": {"x": 300, "y": 10}``` i ako validacija ne postoji korisnik će se pojaviti na nemogućoj poziji na mapi, ili ako zna kako funkcioniše sistem za pomeranje može se pomerati brže od predvidjenog.
   
 ```
 {
   "player": {
-    "id": f47ac10b-58cc-4372-a567-0e02b2c3d479,
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
     "name": "Player1",
     "status": {
       "health": 100,
@@ -142,11 +142,12 @@ D4A4EEB8D8602FCCF5CE829519DD4F913DF1C53B9B3992AC6C66C6D346C2A0CE06
 
 #### Primer dobrog slanja input-a
 
-  Ovakav primer slanja inputa je drastično bolji od prethodnog jer otkrivamo podatke o korisniku koji samo serveru mogu biti interesantni(Sem ID-a korisnika). Plus sbog male količine podataka koja je u prenosu nije potreban visok stepen logike za validaciju input-a, a takodje je manje podataka u prenosu.
+  Ovakav primer slanja inputa je drastično bolji od prethodnog jer otkrivamo podatke o korisniku koji samo serveru mogu biti interesantni(Sem ID-a korisnika). Dodatno zbog male količine podataka koja je u prenosu nije potreban visok stepen logike za validaciju input-a, a takodje je manje podataka u prenosu i korisnik ne može eksploatisati sistem kretanja kao u prethnodnom slučaju. Sa ovakvnim sistemom jedini vid validacije koji je neophodan jeste validacija kompatibilnosti poslatih signala, na primer da li korisnik može da skoči dok je u skoku, da li može dva puta da skoči tokom jednog slanja, da li može da se kreće levo i desno u isto vreme i slično.
+  
 ```
 {
   "player": {
-    "id": f47ac10b-58cc-4372-a567-0e02b2c3d479,
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
     "actions": [
       {
         "type": "move",
