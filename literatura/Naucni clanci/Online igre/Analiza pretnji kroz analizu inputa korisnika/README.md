@@ -102,6 +102,24 @@ D4A4EEB8D8602FCCF5CE829519DD4F913DF1C53B9B3992AC6C66C6D346C2A0CE06
 
   Mitigacija ovakvog napada se realizuje delom kroz samu arhitekturu sistema. Serveri većinski primaju podatke od korisnika po odredjenom tick rate-u[^4] koji predstavlja koliko korisničkih podataka server može da obradi u sekundi [1]. Tako da server kroz samu arhitekturu rešava ovakav problem jer prihvata samo jedan korisnički input u odredjenom vremenskom intervalu, a ostale ignoriše od datog korisnika. Još jedan način koji nije toliko kvalitetan jeste da se detektuju sa kojih adresa dolazi previše paketa i da se IP adrese tih korisnika blacklist-uju, ili ako je u pitanju neki interni server za igre možemo da korisnimo whitelist sistem da dopustimo pristup samo korisnicima kojima mi želimo. Blacklist i whitelist[^5] sistemi se više koriste kada korisnici imaju svoje servere, ako je malo veći server blacklist a ako je tipa server samo za mali skup korisnika(tipa grupa prijatelja) koristiće se whitelist mehanizam.
 
+  Primer whitelist mehanizma se može videti na primeru igre **7 Days to Die** koja ima mehanizam da korisnik koji osnuje instancu servera, pošto su instance servera za manje igača gde na osnovu STEAM_ID-a sa platforme Steam[^8] korisnik može filtrirati koji igrači pristupaju njegovoj instanci servera. Iz igre može pristupiti fajlu Serveradmin.xml koji je običan xml dokument sa konfiguracijama za server gde mora pronaći tag <adminTools>, nakon čega može dodati na primer
+
+```
+<whitelist>
+<whitelisted steamID="STEAM64 ID OF THE PLAYER" />
+</whitelist>
+```
+
+ili 
+
+```
+<blacklist>
+<blacklisted steamID="STEAM64 ID OF THE PLAYER" unbandate="" />
+</blacklist>
+```
+
+ali ne i oba. Nakon čega korisnik treba pokrenuti restart servera iz igre da bi konfiguracije bile primenjene
+
   Isto tako ako se desi navala podataka od raznih korisnika moguća je privremena zaštita kroz instanciranje više game servera i ubacivanje load balancing sloja da ravnomerno šalje korisnike na njih. Ovakav sistem je obradjen kroz samu dekompoziciju modula sistema.
 
 ## Tampering state-a igre
@@ -139,6 +157,14 @@ D4A4EEB8D8602FCCF5CE829519DD4F913DF1C53B9B3992AC6C66C6D346C2A0CE06
   }
 }
 ```
+
+Ukoliko igra nije zaštićena od ovakvog tipa input-a i ako je moguće slati poziciju igrača, omogućava se ovakav način kretanja koji nije predvidjen u igri:
+
+<p align="center">
+  <a href="https://youtu.be/Uf1P3dZreEo?si=j2jpxc4RGgpXDDev&t=114" target="_blank">
+   <img src="http://img.youtube.com/vi/Uf1P3dZreEo/mqdefault.jpg" alt="Watch the video" width="480" height="270" border="10" />
+  </a>
+</p>
 
 #### Primer dobrog slanja input-a
 
@@ -201,3 +227,5 @@ D4A4EEB8D8602FCCF5CE829519DD4F913DF1C53B9B3992AC6C66C6D346C2A0CE06
 [^6]: Wallhack - Nedozvoljeni software koji omogućava napadaču da vidi protivnike kroz zidove
 
 [^7]: Aimbot - Nedozvoljeni software koji omogućava napadaču da automatski nacilja glavu protivnika u pucačkim igrama
+
+[^8] Steam - Masivna platforma za kupovinu i igranje igara, korisnici osim što mogu kupiti igre mogu komunicirati sa drugim korisnicima i igrati igrice zajedno preko Steam servera.
