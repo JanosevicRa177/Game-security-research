@@ -228,4 +228,4 @@ Ukoliko igra nije zaštićena od ovakvog tipa input-a i ako je moguće slati poz
 
 [^7]: Aimbot - Nedozvoljeni software koji omogućava napadaču da automatski nacilja glavu protivnika u pucačkim igrama
 
-[^8] Steam - Masivna platforma za kupovinu i igranje igara, korisnici osim što mogu kupiti igre mogu komunicirati sa drugim korisnicima i igrati igrice zajedno preko Steam servera.
+[^8]: Steam - Masivna platforma za kupovinu i igranje igara, korisnici osim što mogu kupiti igre mogu komunicirati sa drugim korisnicima i igrati igrice zajedno preko Steam servera.
