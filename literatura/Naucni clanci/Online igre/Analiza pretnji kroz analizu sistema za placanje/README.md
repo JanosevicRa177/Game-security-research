@@ -93,7 +93,22 @@ export class StripeEventInterceptor implements NestInterceptor {
 ### DDOS napad na endpointe za kupovinu resursa u igri [2]
 DDOS(Distributed Denial of Service) je jedan od najpoznatijih napada na sisteme svih vrsta. Cilj ovakvog napada jeste da se zaustavi u potpunosti ili smanji koliko je moguće, saobraćaj prema odredjenom servisu. Online video igre nisu izuzetak od ovakvih napada, te napadači za cilj mogu imati razne stvari. Jedan od ciljeva bi mogao da bude sprečavanje regularnih korisnika da kupuju assete u igri. Razlog za sprečavanje bi bilo ostvarivanje prednosti nad protivnicima u competitive[^6] igrama. Ovakva vrsta napada se može izvesti na više načina a najčešća je upotreba distribuiranog napada sa više servera koji svi u isto vreme pokušavaju da preplave sistem sa zahtevima. 
 
-### Mitigacije 
+<p align="center">
+    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20sistema%20za%20placanje/Slike/DDOS_Napad.png"/>
+</p>
+<p align="center">
+    DDOS i načini prevencije
+</p>
+
+## Koraci napada
+
+1. Napadač odredjuje metu napada i sistem za plaćanje koji se koristi u igri.
+
+2. Zbog najčešće jake infrastrukture koju poseduju sistemi za plaćanje, potrebno je dosta servera kako bi se ovakav sistem mogao ugroziti. 
+
+3. Napadač primenjuje neki od tipova DDOS napada, od kojih su najpoznatije "Volume Based DDOS", "Protocol Attacks", "Application layer attack" [5].
+
+## Mitigacije 
 - Firewall predstavlja jednu od osnovih vrsta zaštite od DOS napada. Firewall može biti postavljen i na softverskom i na hardverskom nivou, te je njegova uloga da filtrira saobraćaj u zavisnosti od toga kako je podešen.[4]
 - Ip whitelisting/blacklisting [^4] kao i u prethodnom primeru može da posluži za zabranu saobraćaja sa nepoželjnih ip adresa. Kao i firewall uloga mu je da vrsi filtraciju i smanji mogućnost napada na sistem.[3]
 - Jedna od najbitnijih odbrana sistema od DOS napada jesu load balanceri. Load balanceri služe za izjednačavanje saobraćaja izmedju deployanih instanci sistema, a samim tim sprečavaju opterećavanje pojedinačnih instanci sistema. Ovime se postiže da su svi delovi sistema podjednako opterećeni i da se padovi instanci radi saobraćaja ne dešavaju tako često.[3]
@@ -108,6 +123,8 @@ DDOS(Distributed Denial of Service) je jedan od najpoznatijih napada na sisteme 
 [3] https://aws.amazon.com/shield/ddos-attack-protection/
 
 [4] https://ddos-guard.net/en/blog/what-is-a-firewall-and-how-it-works
+
+[5] https://www.imperva.com/learn/ddos/ddos-attacks/
 
 [^1]: Asset - Bilo koji resurs u video igrama(specijalni item-i, moći, bilo šta što može da se kupi i iskoristi u igri)
 
