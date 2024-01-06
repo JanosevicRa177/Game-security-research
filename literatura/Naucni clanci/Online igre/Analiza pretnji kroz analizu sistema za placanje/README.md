@@ -93,13 +93,6 @@ export class StripeEventInterceptor implements NestInterceptor {
 ### DDOS napad na endpointe za kupovinu resursa u igri [2]
 DDOS(Distributed Denial of Service) je jedan od najpoznatijih napada na sisteme svih vrsta. Cilj ovakvog napada jeste da se zaustavi u potpunosti ili smanji koliko je moguće, saobraćaj prema odredjenom servisu. Online video igre nisu izuzetak od ovakvih napada, te napadači za cilj mogu imati razne stvari. Jedan od ciljeva bi mogao da bude sprečavanje regularnih korisnika da kupuju assete u igri. Razlog za sprečavanje bi bilo ostvarivanje prednosti nad protivnicima u competitive[^6] igrama. Ovakva vrsta napada se može izvesti na više načina a najčešća je upotreba distribuiranog napada sa više servera koji svi u isto vreme pokušavaju da preplave sistem sa zahtevima. 
 
-<p align="center">
-    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/refactor/payment-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20sistema%20za%20placanje/Slike/DDOSNapad.png"/>
-</p>
-<p align="center">
-    DDOS i načini prevencije
-</p>
-
 ## Koraci napada
 
 1. Napadač odredjuje metu napada i sistem za plaćanje koji se koristi u igri.
@@ -113,6 +106,13 @@ DDOS(Distributed Denial of Service) je jedan od najpoznatijih napada na sisteme 
 - Ip whitelisting/blacklisting [^4] kao i u prethodnom primeru može da posluži za zabranu saobraćaja sa nepoželjnih ip adresa. Kao i firewall uloga mu je da vrsi filtraciju i smanji mogućnost napada na sistem.[3]
 - Jedna od najbitnijih odbrana sistema od DOS napada jesu load balanceri. Load balanceri služe za izjednačavanje saobraćaja izmedju deployanih instanci sistema, a samim tim sprečavaju opterećavanje pojedinačnih instanci sistema. Ovime se postiže da su svi delovi sistema podjednako opterećeni i da se padovi instanci radi saobraćaja ne dešavaju tako često.[3]
 - Veoma bitna stvar za odbranu od DOS napada jeste analiza pristiglih napada i identifikacija malicioznih zahteva. U današnje vreme primat u ovakvim analizama preuzimaju neuronske mreže. Najčešći odabir u današnjim sistemima jeste da se koriste eksterni servisi koji su specijalizovani baš za analizu pristiglih zahteva.[3]
+
+<p align="center">
+    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/refactor/payment-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20sistema%20za%20placanje/Slike/DDOSNapad.png"/>
+</p>
+<p align="center">
+    DDOS i načini prevencije
+</p>
 
 
 ## Reference
