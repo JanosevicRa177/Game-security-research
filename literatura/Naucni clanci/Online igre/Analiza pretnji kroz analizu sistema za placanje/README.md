@@ -1,6 +1,6 @@
 # Analiza sistema za placanje
 
-## Uvod
+### Uvod
 
 Ovaj odeljak će se fokusirati na analizu potencijalnih ranjivosti sistema za plaćanje u online video igrama. Sistemi za plaćanje su veoma osetljiv deo bilo koje aplikacije,
 pa samim tim podležu različitim vrstama napada. Motiv napadača u sistemima video igara moze biti različit, a većinski je orijentisan na stvaranje prednosti u odnosu na drugog igrača ili namerno pogoršavanje korisničkog iskustva kod drugih igrača. 
@@ -19,19 +19,74 @@ Moguće pretnje koje vrebaju sisteme za plaćanje u video igrama su:
     Dijagram pretnji
 </p>
 
-## Napadi
+### Napadi
 
 ### Webhook replay [1]
 Webhook replay predstavlja jedan od načina napada na takozvane "webhook"-ove [^2]. Ovaj napad koristi ranjivost sistema koji nije idempotentan ili nema način provere ponavljanja istog zahteva. Pošto je webhook u suštini prost HTTP zahtev, podložan je presretanju u mreži. Upravo ova ranjivost webhooka može biti maliciozno iskorišćena. U slučaju sistema za plaćanje, webhook-ovi služe za dopremanje informacija o uspešnosti transakcija u sistemu ili ažuriranje informacija vezanih za subskripcije.
-Primer jedno webhooka bi bio HTTP zahtev koji dojavljuje sistemu igre da je kupljena neka vrsta asseta. Ukoliko je asset potrošan, te se može kupiti na količinu, maliciozni korisnik može vrlo lako da po potrebi pošalje ponovljenu webhook dojavu o kupljenom assetu. Ovo bi značilo da ukoliko ne postoji zaštita, napadač može neograničeno da povećava kupljenu količinu, sa samo jednom stvarnom transakcijom.
+Primer jednog webhooka bi bio HTTP zahtev koji dojavljuje sistemu igre da je kupljena neka vrsta asseta. Ukoliko je asset potrošan, te se može kupiti na količinu, maliciozni korisnik može vrlo lako da po potrebi pošalje ponovljenu webhook dojavu o kupljenom assetu. Ovo bi značilo da ukoliko ne postoji zaštita, napadač može neograničeno da povećava kupljenu količinu, sa samo jednom stvarnom transakcijom. Naravno webhook replay napad nije ograničen samo na video igre, nego se može primeniti na bilo koji sistem koji koristi webhook-ove. 
 
-### Mitigacije
+## Koraci napada
+1. Napadač pronalazi metu i odredjuje cilj napada.
+
+2. Napadač pristupa prvoj fazi napada, gde mora na neki način da dodje do tela http zahteva. Ukoliko se napadač nalazi u istoj mreži kao i web server, onda ovaj korak postaje trivijalan zbog raznih alata za presretanje saobraćaja. Ukoliko se ne nalazi u istoj mreži, tada može da pokuša da pronadje ranjivost u sistemu koja bi mu omogućila pristup logovima(potencijalno se loguje telo webhooka) ili neki drugi način kojim bi iznudio pristup.
+
+3. Nakon što napadač dobije u posed telo zahteva, napadač čeka pravi trenutak da ga upotrebi. Pravi trenutak zavisi od tipa napada koji se izvodi. Primer ovoga bi bio napad na subskripcije, gde nema smisla da se jedna te ista subskripcija produžava više puta prije nego što istekne. Dobar napad bi bio da se pošalje identičan webhook na isteku subskripcije, čime bi se ona dalje produžila.
+  
+
+## Mitigacije
 - Prva u nizu odbrana od ovakve vrste napada jeste verifikacija potpisa platforme sa koje dobijamo webhook. Ovakva vrsta odbrane predstavlja preduslov za sve ostale vrste odbrane. Razlog tome je što se verifikacijom potpisa vrši sužavanje zahteva koji mogu dospeti na server i onemogućava da se šalju zahtevi koji nisu sa ciljane platforme.
 Najčešće mesto gde se prosledjuje potpis, jesu header-i zahteva. Ova mitigacija ne može sama da brani sistem od replay napada, jer jos uvek ostaje problem presretanja zahteva.
+
+```
+export class StripeEventInterceptor implements NestInterceptor {
+  constructor(
+    @Inject(BILLING_SERVICE) private readonly billingService: IBillingService,
+  ) {}
+
+  intercept(
+    context: ExecutionContext,
+    next: CallHandler,
+  ): Observable<any> | Promise<Observable<any>> {
+    const request = context
+      .switchToHttp()
+      .getRequest<RawBodyRequest<Request>>();
+    const response = context.switchToHttp().getResponse<Response>();
+    try {
+      this.billingService.validateEventSignature(
+        request.headers['stripe-signature'] as string,
+        request.rawBody,
+      );
+      return next.handle();
+    } catch (e: any) {
+      response
+        .json({
+          message: 'Signature invalid',
+          status: 400,
+        })
+        .status(400);
+    }
+  }
+}
+```
+<p align="center">Primer validatora potpisa stripe webhook-a</p>
 
 - Pored odbrane verifikacijom potpisa, moguće je suziti zahteve i uz pomoć ip whitelist-a[^4], koji suštinski radi isti posao kao verifikacija potpisa, onemogućavajući slanje zahteva sa platforme koja nije ciljana. I verifikacija i ip whitelist zavise od sistema za plaćanje i toga šta on nudi kao vrstu zaštite.
 
 - U kombinaciji sa verifikacijom potpisa, najčešće se koristi timestamp. Timestamp omogućava da se odredi kada je webhook kreiran, čime možemo odrediti dozvoljeni fiksni vremenski period koji sme proći nakon slanja. Stripe najčešće koristi period od 5 minuta, te se timestamp nadodaje na postojeći potpis prije hešovanja potpisa.
+
+```
+{
+  "event": "payment_success",
+  "data": {
+    "amount": 100.00,
+    "currency": "USD",
+    "transaction_id": "abc123",
+    "timestamp": "2024-01-06T12:30:45Z",
+    "unique_id": "a1b2c3d4e5"
+  }
+}
+```
+<p align="center">Primer webhook payload-a koji koristi timestamp kao mehanizam zaštite</p>
 
 - Idempotentnost [^3] predstavlja još jedno od rešenja za ovakav problem. Koncept idempotentnosti govori o tome da se jedan zahtev može obraditi samo jedanput. Ukoliko je idempotentnost endpointa korektno implementirana, timestamp-ovi nisu potrebni kao dodatna zaštita. 
 
