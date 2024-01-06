@@ -94,7 +94,7 @@ export class StripeEventInterceptor implements NestInterceptor {
 DDOS(Distributed Denial of Service) je jedan od najpoznatijih napada na sisteme svih vrsta. Cilj ovakvog napada jeste da se zaustavi u potpunosti ili smanji koliko je moguće, saobraćaj prema odredjenom servisu. Online video igre nisu izuzetak od ovakvih napada, te napadači za cilj mogu imati razne stvari. Jedan od ciljeva bi mogao da bude sprečavanje regularnih korisnika da kupuju assete u igri. Razlog za sprečavanje bi bilo ostvarivanje prednosti nad protivnicima u competitive[^6] igrama. Ovakva vrsta napada se može izvesti na više načina a najčešća je upotreba distribuiranog napada sa više servera koji svi u isto vreme pokušavaju da preplave sistem sa zahtevima. 
 
 <p align="center">
-    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20sistema%20za%20placanje/Slike/DDOS_Napad.png"/>
+    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20sistema%20za%20placanje/Slike/DDOSNapad.png"/>
 </p>
 <p align="center">
     DDOS i načini prevencije
