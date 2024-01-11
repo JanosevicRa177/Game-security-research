@@ -93,9 +93,11 @@ Mitigacije koje zaustavljaju generatore ključeva jesu online key verifikacije, 
 
  Glavna mitigacija koja sprečava napadače da analiziraju kod igre jeste enkripcija koda igre tokom skidanja igre sa interneta i pokretanje igre u virtuelnim okruženjima kojima alati za probijanje ne mogu da pristupe. Primer DRM alata koji koristi virtuelna okruženja je VMProtect.
 
- Mitigacija koja je proizvela drugu vrstu napada je Always online koja forsira korisnika da dok igra igru bude konstantno povezan na internet a zaobilazi se emulacijom servera. U kombinaciji sa enkripcijom koda može predstavljati ozbiljan vid zaštite, koji ima takodje može izazvati oziljne frustracije kod korisnika jer od njega zahteva da ima internet konekciju za nešto što zapravo ne bi trebalo da zahteva internet konekciju.
+ Mitigacija koja je proizvela drugu vrstu napada je **Always online** koja forsira korisnika da dok igra igru bude konstantno povezan na internet a zaobilazi se emulacijom servera. U kombinaciji sa enkripcijom koda može predstavljati ozbiljan vid zaštite, koji ima takodje može izazvati oziljne frustracije kod korisnika jer od njega zahteva da ima internet konekciju za nešto što zapravo ne bi trebalo da zahteva internet konekciju.
 
- Korak dalje od Always online je mitigacija Online kod igre koja ne samo da zahteva da korisnik ima konekciju na internet već odredjene aktivnosti u igrici uopšte nisu moguće
+ Korak dalje od **Always online** je mitigacija **Online kod igre** koja ne samo da zahteva da korisnik ima konekciju na internet već odredjene aktivnosti u igrici uopšte nisu moguće bez internet konekcije, jer se kod za izvršavanje odredjenih akcija nalazi na internetu i samim tim je potrebna konekcija na server da bi igranje igre bilo moguće. Primer ovakve igre je Assassins Creed 2 koja je zahtevala dobru internet konekciju u ranijim danima interneta, pa su korisnici imali izuzetno loša iskustva u vidu performansi ove igre.
+
+ Najsvežija mitigacija koja je zapravo indirektna mitigacija, i možda smer u kome će se igre dalje razvijati jeste **Cloud gaming**. Poprilično nov način igranja igara koji se oslanja na princip subskripcija, jedna subsripcija je iznajmljivanje računara, dok je druga iznajmljivanje igara. U ovom slučaju slično kao i sa web tehnologijama, ako sistem dobro zaštitimo igre se praktično ponašaju kao klasišan client server arhitektura. Subskripcije mogu zahtevati drastično manje novca ukoliko korisnik želi samo povremeno da igra odredjene video igre i nije aktivan igrač, plus na to ne želi da sastavlja računar koji može koštati velike količine novca. Još uvek nedovoljno razvijen sistem ali validan način omogućavanja jeftinijeg igranja igara, i kasnije zaštite igara ako postane dovoljno zastupljen jer odredjene igre mogu biti limitirane da se igraju na odredjenim mašinama koje su iznajmljene i limitirane samo na igranje igara. Poprilično kontraverzna mitigacija koja u zavisnosti od cene može zauvek zaustaviti crack-ovanje, ali u istom korisnik ima samo subrkipciju i ne poseduje niti igru niti računar.
 
 ## Reference
 
@@ -107,7 +109,7 @@ Mitigacije koje zaustavljaju generatore ključeva jesu online key verifikacije, 
 
 [4] [Digital rights management (DRM) examples](https://www.pcgamingwiki.com/wiki/Digital_rights_management_(DRM))
 
-[5] [Video Game DRM Analysis and Paradigm Solution]([https://www.pcgamingwiki.com/wiki/Digital_rights_management_(DRM)](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Offline%20igre/Literatura/Video%20Game%20DRM%20Analysis%20and%20Paradigm%20Solution.pdf))
+[5] [Video Game DRM Analysis and Paradigm Solution](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Offline%20igre/Literatura/Video%20Game%20DRM%20Analysis%20and%20Paradigm%20Solution.pdf)
 
 
 [^1]: DRM - sktraćenica za Digital Rights Management sisteme, služe da osiguraju digitalne proizvode od neovlašćenog repliciranja poput igara, pesama, filmova i slično
