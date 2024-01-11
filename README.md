@@ -23,4 +23,4 @@ Srdjan Stjepanović E2 58/2023
 
 ## Reference
 
-[1] [DRM](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Offline%20igre/DRM%20generalno.pdf)
+[1] [DRM](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Offline%20igre/Literatura/Video%20Game%20DRM%20Analysis%20and%20Paradigm%20Solution.pdf)
