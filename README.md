@@ -14,6 +14,8 @@ Spomenuće se i razvoj DRM[1] sistema i njihova primena u video igrama zarad oč
 
 [Analiza pretnji kroz analizu sistema za placanje u video igrama](https://github.com/JanosevicRa177/Game-security-research/blob/main/literatura/Naucni%20clanci/Online%20igre/Analiza%20pretnji%20kroz%20analizu%20sistema%20za%20placanje) : Prolazak kroz najčešće načine napada na integracije sistema za plaćanje u video igrama
 
+[Analiza pretnji na offline video igre i mitigacije putem DRM alata](https://github.com/JanosevicRa177/Game-security-research/tree/main/literatura/Naucni%20clanci/Offline%20igre) : Prolazak kroz napade na offline video igre, osvrt na uticaj na performanse DRM alata i istorijat borbe napadača i DRM alata
+
 ## Članovi tima
 Dušan Janošević E2 6/2023
 
