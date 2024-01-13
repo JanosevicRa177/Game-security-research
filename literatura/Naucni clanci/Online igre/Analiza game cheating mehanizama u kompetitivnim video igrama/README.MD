@@ -30,7 +30,7 @@ Sve navedeno upućuje na to da anti-cheat sistemi mogu stvoriti razne vrste ranj
 ## Pretnje, Napadi, Mitigacije
 U narednom tekstu ćemo analizirati najpoznatije vrste napada na video igre, kao i mitigacije koje se mogu primeniti kao način zaštite
 <p align="center">
-    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Slike/SlojeviSistemaIgara.png"/>
+    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Slike/StabloNapada.png"/>
 </p>
 <p align="center">
    Slika 2. Stablo napada
