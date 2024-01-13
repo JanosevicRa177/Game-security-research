@@ -16,6 +16,8 @@ Spomenuće se i razvoj DRM[1] sistema i njihova primena u video igrama zarad oč
 
 [Analiza pretnji na offline video igre i mitigacije putem DRM alata](https://github.com/JanosevicRa177/Game-security-research/tree/main/literatura/Naucni%20clanci/Offline%20igre) : Prolazak kroz napade na offline video igre, osvrt na uticaj na performanse DRM alata i istorijat borbe napadača i DRM alata
 
+[Analiya game cheating mehanizama u kompetitivnim igrama](https://github.com/JanosevicRa177/Game-security-research/tree/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama)
+
 ## Članovi tima
 Dušan Janošević E2 6/2023
 
