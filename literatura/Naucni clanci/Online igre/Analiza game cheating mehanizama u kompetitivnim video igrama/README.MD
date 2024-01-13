@@ -76,7 +76,7 @@ Ideja lag switch napada jeste da se upotrebi kašnjenje strima podataka ka serve
 Look ahead napad se eksploatiše u peer to peer igrama tako što maliciozni igrač namerno odlaže svoje akcije u cilju da vidi šta će protivnik da uradi a zatim adekvatno odgovori akcijom. Maliciozni igrač se pretvara kao da ima problema sa konekcijom, te modifikuje pakete koje šalje, menjajući njihovu vremensku odrednicu. Ovime maliciozni igrač postiže da server detektuje paket kao da je poslat ranije, čime napadač stiče jasnu prednost nad protivnicima. [7]
 
 <p align="center">
-    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Slike/StabloNapada.png"/>
+    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Slike/LookAheadNapad.png"/>
 </p>
 <p align="center">
    Slika 3. Prikaz look ahead napad uz pomoć vremenskih odrednica
@@ -102,7 +102,7 @@ Look ahead napad se eksploatiše u peer to peer igrama tako što maliciozni igra
 
 [6] https://www.gosugamers.net/overwatch/streams/53612-bsdlp
 
-[7]
+[7] https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Literatura/ActiveCheatingPrevention.pdf
 
 
 
