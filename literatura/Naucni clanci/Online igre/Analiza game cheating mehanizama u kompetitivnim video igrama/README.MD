@@ -85,31 +85,30 @@ Look ahead napad se eksploatiše u peer to peer igrama tako što maliciozni igra
 
 ### Look Ahead mitigacije
 
-- Glavna mitigacija vezana za look ahead napad jeste Lockstep protokol. Lockstep protokol koristi metod najave namere.
+- Glavna mitigacija vezana za look ahead napad jeste Lockstep protokol. Pošto svaka akcija, u igrama koje koriste peer to peer arhitekturu, mora biti iskomunicirana sa svim čvorovima u igri, stvara se potencijal za upotrebu Look Ahead napada. Lockstep protokol rešava ovu situaciju tako što forsira igrače da se obavežu na odredjenu akciju pre nego što je otkriju. Svaka akcija se definiše uz pomoć hash funkcije i to je ujedno i identifikator da li akcija odgovara obavezi. Igra napreduje brzinom najsporijeg igrača zbog sinhronizacije, što ovaj protokol čini savršenim za "Turn Based" igre. Kako bi se prilagodio za realne igre, kreiran je asinhroni lockstep koji omogućava igračima da biraju akcije nezavisno od protivnika, ali ukoliko treba da dodje do interakcije sa protivnicima, igrači ulaze u takozvani lockstep režim.[7]
+
 
 <p align="center">
     <img src="https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Slike/LookAheadPseudoCode.png"/>
 </p>
 <p align="center">
-   Slika 3. Pseudo kod lockstep protokola
+   Slika 4. Pseudo kod lockstep protokola
 </p>
 
-
-
 # Reference
-[1] https://www.tripwire.com/state-of-security/cybersecurity-in-competitive-online-gaming-cheating-mitigation-and-vulnerabilities
+[1] [https://www.tripwire.com/state-of-security/cybersecurity-in-competitive-online-gaming-cheating-mitigation-and-vulnerabilities](https://www.tripwire.com/state-of-security/cybersecurity-in-competitive-online-gaming-cheating-mitigation-and-vulnerabilities)
 
-[2] https://en.wikipedia.org/wiki/Cheating_in_online_games
+[2] [https://en.wikipedia.org/wiki/Cheating_in_online_games](https://en.wikipedia.org/wiki/Cheating_in_online_games)
 
-[3] https://security.stackexchange.com/questions/31303/preventing-artificial-latency-or-lag-hacking-in-multiplayer-games
+[3] [https://security.stackexchange.com/questions/31303/preventing-artificial-latency-or-lag-hacking-in-multiplayer-games](https://security.stackexchange.com/questions/31303/preventing-artificial-latency-or-lag-hacking-in-multiplayer-games)
 
-[4] https://chatbotsjournal.com/what-are-aimbots-and-how-do-they-work-4936794e5453
+[4] [https://chatbotsjournal.com/what-are-aimbots-and-how-do-they-work-4936794e5453](https://chatbotsjournal.com/what-are-aimbots-and-how-do-they-work-4936794e5453)
 
-[5] https://help.steampowered.com/en/faqs/view/571A-97DA-70E9-FF74
+[5] [https://help.steampowered.com/en/faqs/view/571A-97DA-70E9-FF74](https://help.steampowered.com/en/faqs/view/571A-97DA-70E9-FF74)
 
-[6] https://www.gosugamers.net/overwatch/streams/53612-bsdlp
+[6] [https://www.gosugamers.net/overwatch/streams/53612-bsdlp](https://www.gosugamers.net/overwatch/streams/53612-bsdlp)
 
-[7] https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Literatura/ActiveCheatingPrevention.pdf
+[7] [https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Literatura/ActiveCheatingPrevention.pdf](https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Literatura/ActiveCheatingPrevention.pdf)
 
 
 
