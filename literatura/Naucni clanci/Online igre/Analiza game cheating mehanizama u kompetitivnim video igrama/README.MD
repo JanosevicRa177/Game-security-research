@@ -79,7 +79,7 @@ Look Ahead napad se eksploatiše u peer to peer igrama tako što maliciozni igra
     <img src="https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Slike/LookAheadNapad.png"/>
 </p>
 <p align="center">
-   Slika 3. Prikaz Look Ahead napad uz pomoć vremenskih odrednica
+   Slika 3. Prikaz Look Ahead napada uz pomoć vremenskih odrednica
 </p>
 
 
