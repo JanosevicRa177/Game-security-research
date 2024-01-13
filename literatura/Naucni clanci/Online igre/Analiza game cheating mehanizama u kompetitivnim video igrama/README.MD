@@ -46,7 +46,7 @@ Postoji mnoštvo napada koji se dogadjaju u realnim sistemima igara, te će u ov
 3. Look ahead
 
 
-#### Aim Bots Napad
+### Aim Bots Napad
 Aim botovi su postali jako popularni u "pucačinama" zbog ekstremne prednosti koju daju igračima, kao i komplikovane detekcije. 
 Njihova uloga jeste da pomognu malicioznom igraču u pucačkim igricama, tako što automatizuju nišan igrača i samim tim omogućavaju da maliciozni igrač ostvari prednost nad drugim igračima. Možda i najpoznatija kompetitivna video igra u kojoj se aim botovi upotrebljavaju, jeste Counter Strike (Valve). Većina nas je igrala ovu popularnu pucačinu makar jednom u životu, a oni koji su igrali kompetitivni mod, znaju koliko je frustrirajuće igrati protiv igrača koji koriste aim botove. Postoji više vrsta aim botova, kao što su:
 - Pixel Scanning Aim Bots
@@ -55,22 +55,22 @@ Njihova uloga jeste da pomognu malicioznom igraču u pucačkim igricama, tako š
 
 Pixel Scanning Aim Bots, kao što im samo ime kaže, rade na principu analize pixela trenutnog frejma, radeći ekstrapolaciju vizuelnih informacija i tako detektujući protivnika. Direct Aim Bots rade na principu analize podataka koji pristižu sa servera video igre, te onda na osnovu pozicije protivnika mogu da premeste nišan na direktno na njega. Triggerbots su nešto drugačiji od prethodno navedenih aim botova, po tome što ne rade nužno pomeranje nišana direktno na protivnika, već poboljšavaju reflekse igrača tako što detektuju da li je maliciozni igrač prevukao nišan preko protivnika, a zatim automatski okidaju pucanj bez da maliciozni igrač učini išta.[4]
 
-#### Aim Bots Mitigacije
+### Aim Bots Mitigacije
 
 - Prva mitigacija jeste anti-cheat software. Kao primer za ovakvu vrstu mitigacije, uzećemo VAC(Valve Anti Cheat) koji je razvila kompanije valve i čija je jedna od namena baš detekcija aim botova. VAC analizira fajlove igre, dynamic library links, kao i da li je došlo do promene kod executable fajlova. Ovime VAC postiže ne samo detekciju aim botova, već i detekciju svih vrsta manipulacija sadržajem igre. Ipak VAC ne mora u svim slučajevima da otkrije aim botove, te stoga nije 100 procentno rešenje za dati problem.[5]
 
 - Druga mitigacija koja je veoma bitna jeste "Player Supervision" ili u prevodu nadgledanje od strane igrača. Igrači koji su stekli poverenje u igri i koji su ostvarili zavidne rezultate u kompetitivnim igrama, često dobijaju pristup softveru koji služi za nadgledanje kompetitivnih igara. Jedan od primera ovakvog softvera jeste Overwatch[6] kompanije valve, u kojem visoko rangirani igrači ocenjuju sumnjive situacije i da li je došlo do upotrebe cheat-ova, a zatim sistem glasanja odlučuje da li će igrač biti banovan. Primer upotrebe Overwatch-a možete pogledati na [linku](https://www.youtube.com/watch?v=a_n-_jIK9GY). 
 
 
-#### Lag Switch Napad
+### Lag Switch Napad
 Ideja lag switch napada jeste da se upotrebi kašnjenje strima podataka ka serveru u svrhu ostvarivanja iznenadjenja prema protivniku. 
 Često u kompetitivnim igrama nesvesno dolazi do izvodjenja ovakve vrste napada. Razlog tome jeste što je lag switch uzrokovan lošom internet konekcijom, čime se strim podataka usporava do te mere da protivniku izgleda kao da se protivnik teleportuje. Ovakav napad može biti izveden tako što se isključi a nakon toga brzo uključi ethernet kabel, dok se u isto vreme lokalna igra nastavi redovno. Ovo uzrokuje da lokalna instanca igre baferuje pokrete igrača i čeka da se povrati konekcija. Kada se konekcija povrati, svi podaci iz bafera se šalju velikom brzinom, te protivniku deluje kao da se igrač teleportovao. Ovakav napad se smatra hardverskim ali je isto tako moguće izvesti ga softverski. Dovoljno je imati program u mreži koji će po potrebi smanjiti usporiti protok mreže i time uzrokovati istu pojavu kao da smo hardverski isključili ethernet kabel. Primer ovakve vrste napada koji se manifestuje kroz teleportovanje igrača možete pogledati na [linku](https://www.reddit.com/r/EscapefromTarkov/comments/obg894/example_of_a_lagswitch/).
 
 ### Lag Switch Mitigacije
 
-- Prva mitigacija jeste banovanje igrača koji nemaju dobru internet konekciju. Ovakav metod zaštite se može smatrati ograničavajući zbog toga što igrači sa lošijom internet konekcijom koji ne eksploatišu ovaj napad i dalje neće moći igrati igru. Ipak, ograničenje ne mora biti toliko ekstremno, već se može odrediti granica koja je dovoljno visoka da prepozna lag, ali isto tako dovoljno niska da većina igrača može da igra igru slobodno. Sve ovo se može postići upotrebom firewall-a ili ruter pravila koji mogu definisati granicu protoka za igrače. Naravno, ovakav vid zaštite i dalje nije 100 postotna zaštita, iz razloga što je jako teško odrediti granicu. Zbog toga, u većini slučajeva će napadač moći steći prednost ali mininalno. [2] 
+- Prva mitigacija jeste banovanje igrača koji nemaju dobru internet konekciju. Ovakav metod zaštite se može smatrati ograničavajući zbog toga što igrači sa lošijom internet konekcijom koji ne eksploatišu ovaj napad i dalje neće moći igrati igru. Ipak, ograničenje ne mora biti toliko ekstremno, već se može odrediti granica koja je dovoljno visoka da prepozna lag, ali isto tako dovoljno niska da većina igrača može da igra igru slobodno. Sve ovo se može postići upotrebom firewall-a ili ruter pravila koji mogu definisati granicu protoka za igrače. Naravno, ovakav vid zaštite i dalje nije 100 postotna zaštita, iz razloga što je jako teško odrediti granicu. Zbog toga, u većini slučajeva će napadač moći steći prednost ali mininalno. [3]
 
-- Još jedna zanimljiva mitigacija jeste korišćenje third party softvera koji omogućava hardversku detekciju problema sa internetom. Primer ovoga bi bila detekcija pada napona prilikom isključenja eternet kabela, nakon čega bi korisnik kao i kod prve mitigacije bio banovan. [2] 
+- Još jedna zanimljiva mitigacija jeste korišćenje third party softvera koji omogućava hardversku detekciju problema sa internetom. Primer ovoga bi bila detekcija pada napona prilikom isključenja eternet kabela, nakon čega bi korisnik kao i kod prve mitigacije bio banovan. [3]
 
 ### Look Ahead napad
 Look ahead napad se eksploatiše u peer to peer igrama tako što maliciozni igrač namerno odlaže svoje akcije u cilju da vidi šta će protivnik da uradi a zatim adekvatno odgovori akcijom. Maliciozni igrač se pretvara kao da ima problema sa konekcijom, te modifikuje pakete koje šalje, menjajući njihovu vremensku odrednicu. Ovime maliciozni igrač postiže da server detektuje paket kao da je poslat ranije, čime napadač stiče jasnu prednost nad protivnicima. [7]
@@ -85,7 +85,14 @@ Look ahead napad se eksploatiše u peer to peer igrama tako što maliciozni igra
 
 ### Look Ahead mitigacije
 
-- Glavna mitigacija vezana za look ahead napad jeste Lockstep protokol. Lockstep protokol koristi 
+- Glavna mitigacija vezana za look ahead napad jeste Lockstep protokol. Lockstep protokol koristi metod najave namere.
+
+<p align="center">
+    <img src="https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Slike/LookAheadPseudoCode.png"/>
+</p>
+<p align="center">
+   Slika 3. Pseudo kod lockstep protokola
+</p>
 
 
 
