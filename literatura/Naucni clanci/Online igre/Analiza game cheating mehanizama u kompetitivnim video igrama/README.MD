@@ -43,7 +43,7 @@ Na slici 2. možemo videti najpoznatije vrste napada na kompetitivne video igre.
 Postoji mnoštvo napada koji se dogadjaju u realnim sistemima igara, te će u ovom članku biti obradjena 3 napada i to:
 1. Aim Bots
 2. Lag Switch
-3. Look ahead
+3. Look Ahead
 
 
 ### Aim Bots Napad
@@ -73,19 +73,19 @@ Ideja lag switch napada jeste da se upotrebi kašnjenje strima podataka ka serve
 - Još jedna zanimljiva mitigacija jeste korišćenje third party softvera koji omogućava hardversku detekciju problema sa internetom. Primer ovoga bi bila detekcija pada napona prilikom isključenja eternet kabela, nakon čega bi korisnik kao i kod prve mitigacije bio banovan. [3]
 
 ### Look Ahead napad
-Look ahead napad se eksploatiše u peer to peer igrama tako što maliciozni igrač namerno odlaže svoje akcije u cilju da vidi šta će protivnik da uradi a zatim adekvatno odgovori akcijom. Maliciozni igrač se pretvara kao da ima problema sa konekcijom, te modifikuje pakete koje šalje, menjajući njihovu vremensku odrednicu. Ovime maliciozni igrač postiže da server detektuje paket kao da je poslat ranije, čime napadač stiče jasnu prednost nad protivnicima. [7]
+Look Ahead napad se eksploatiše u peer to peer igrama tako što maliciozni igrač namerno odlaže svoje akcije u cilju da vidi šta će protivnik da uradi a zatim adekvatno odgovori akcijom. Maliciozni igrač se pretvara kao da ima problema sa konekcijom, te modifikuje pakete koje šalje, menjajući njihovu vremensku odrednicu. Ovime maliciozni igrač postiže da server detektuje paket kao da je poslat ranije, čime napadač stiče jasnu prednost nad protivnicima. [7]
 
 <p align="center">
     <img src="https://github.com/JanosevicRa177/Game-security-research/blob/game-cheating-study/literatura/Naucni%20clanci/Online%20igre/Analiza%20game%20cheating%20mehanizama%20u%20kompetitivnim%20video%20igrama/Slike/LookAheadNapad.png"/>
 </p>
 <p align="center">
-   Slika 3. Prikaz look ahead napad uz pomoć vremenskih odrednica
+   Slika 3. Prikaz Look Ahead napad uz pomoć vremenskih odrednica
 </p>
 
 
 ### Look Ahead mitigacije
 
-- Glavna mitigacija vezana za look ahead napad jeste Lockstep protokol. Pošto svaka akcija, u igrama koje koriste peer to peer arhitekturu, mora biti iskomunicirana sa svim čvorovima u igri, stvara se potencijal za upotrebu Look Ahead napada. Lockstep protokol rešava ovu situaciju tako što forsira igrače da se obavežu na odredjenu akciju pre nego što je otkriju. Svaka akcija se definiše uz pomoć hash funkcije i to je ujedno i identifikator da li akcija odgovara obavezi. Igra napreduje brzinom najsporijeg igrača zbog sinhronizacije, što ovaj protokol čini savršenim za "Turn Based" igre. Kako bi se prilagodio za realne igre, kreiran je asinhroni lockstep koji omogućava igračima da biraju akcije nezavisno od protivnika, ali ukoliko treba da dodje do interakcije sa protivnicima, igrači ulaze u takozvani lockstep režim.[7]
+- Glavna mitigacija vezana za Look Ahead napad jeste Lockstep protokol. Pošto svaka akcija, u igrama koje koriste peer to peer arhitekturu, mora biti iskomunicirana sa svim čvorovima u igri, stvara se potencijal za upotrebu Look Ahead napada. Lockstep protokol rešava ovu situaciju tako što forsira igrače da se obavežu na odredjenu akciju pre nego što je otkriju. Svaka akcija se definiše uz pomoć hash funkcije i to je ujedno i identifikator da li akcija odgovara obavezi. Igra napreduje brzinom najsporijeg igrača zbog sinhronizacije, što ovaj protokol čini savršenim za "Turn Based" igre. Kako bi se prilagodio za realne igre, kreiran je asinhroni lockstep koji omogućava igračima da biraju akcije nezavisno od protivnika, ali ukoliko treba da dodje do interakcije sa protivnicima, igrači ulaze u takozvani lockstep režim.[7]
 
 
 <p align="center">
